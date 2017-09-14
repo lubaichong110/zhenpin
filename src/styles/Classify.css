@@ -1,0 +1,77 @@
+.classify_container{
+    width: 100%;
+    height: 14.6rem;
+    position: relative;
+}
+.class_left{
+    position: fixed;
+    top: 1.5rem;
+    width: 30%;
+    height: 100%;
+    overflow: hidden;
+    background: #f3f3f3;
+}
+.react-iscroll{
+    width: 100%;
+}
+#wrapper{
+    width: 100%;
+}
+#scroller{
+    width: 100%;
+}
+.class_left ul{
+    width: 100%;
+}
+.class_left ul li{
+    width: 100%;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    text-align: center;
+    color: #333;
+    background-color: #f3f3f3;
+}
+.class_right{
+    float: right;
+    width: 70%;
+    padding: 0 0.2rem;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.kind_title{
+    width: 100%;
+    border-top: 1px #ddd solid;
+    height: .6rem;
+    text-align: center;
+    color: #000;
+    margin: 0.7rem auto .5rem;
+}
+.kind_title span{
+    position: relative;
+    top: -.35rem;
+    background-color: #fff;
+    padding: 0 .15rem;
+}
+.goods{
+    width: 100%;
+    height: 100%;
+}
+.goods  ul{
+    width: 100%;
+    overflow: hidden;
+}
+.goods  ul li{
+    float: left;
+    width: 33%;
+    height: 100%;
+}
+.goods  ul li img{
+    width: 2rem;
+    height: 2.2rem;
+}
+.goods  ul li .g_name{
+    width: 2rem;
+    height: 0.62rem;
+    line-height: 0.62rem;
+    text-align: center;
+}
