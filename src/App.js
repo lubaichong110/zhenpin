@@ -12,9 +12,10 @@ import Zhenxuan from "./components/Zhenxuan.js"
 import Brand from "./components/Brand.js"
 import My from "./components/My.js"
 import Header from "./components/Header.js"
+import Detail from './components/Detail.js'
 
 //配置路由
-const BasicExample = () => (
+const App = () => (
   <Router>
     <div className="app_wrap">
       <Header></Header>
@@ -24,6 +25,7 @@ const BasicExample = () => (
           <Route path="/zhenxuan" component={Zhenxuan}/>
           <Route path="/brand" component={Brand}/>
           <Route path="/my" component={My}/>
+          <Route path="/detail" component={Detail}/>
       </div>
       <div className="foot_bar">
         <div><Link to="/"><i className="iconfont icon-home"></i>首页</Link></div>
@@ -35,4 +37,4 @@ const BasicExample = () => (
     </div>
   </Router>
 )
-export default BasicExample
+export default App

@@ -12,7 +12,7 @@ class HeaderUI extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div id="header">
                 <Search
                     placeholder="input search text"
                     style={{ width: 200 }}
