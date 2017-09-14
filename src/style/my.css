@@ -1,0 +1,132 @@
+.my{
+    width: 100%;
+    height: 100%;
+    background: #e5e5e5;
+}
+.top{
+    width: 100%;
+    height: 6rem;
+    background-color: #d12946;
+    color: #fff;
+    display: flex;
+    padding: .8rem 1.5rem;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+.top .set,.top .user,.top .email{
+    width: 33.33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.top .set,.top .email{
+    width: 1.1rem;
+    height: 1.1rem;
+    border : 1px solid #b31f3b;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: .8rem;
+
+}
+.top .set div,.top .email div{
+     width: .8rem;
+    height: .8rem;
+    background: #aa1d36;
+    border-radius: 50%;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #eac7cd;
+}
+.top .set div i,.top .email div i{
+    font-size: .5rem;
+
+}
+.top .user{
+    justify-content: space-around;
+}
+.top .user img{
+    width: 1.8rem;
+    height: 1.8rem;
+}
+.top .user .headImg{
+    width: 2.5rem;
+    height: 2.5rem;
+     border : 1px solid #b31f3b;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top .user .headImg div{
+    width: 2.1rem;
+    height: 2.1rem;
+     background: #aa1d36;
+    border-radius: 50%;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user .login{
+    width: 2.5rem;
+    height: .8rem;
+    background: #87001b;
+    border-radius: 1rem;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.container{
+    width: 100%;
+    height: 100%;
+    padding: 0 .15rem;
+    box-sizing: border-box;
+    color: #4c4c4c;
+}
+.orders,.fortune{
+    width: 100%;
+    height: 2.4rem;
+    background: #fff;
+    display: flex;
+    border-radius: .2rem;
+    align-items: center;
+}
+.orders div,.fortune div{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.orders div .icon,.fortune div .icon{
+    font-size: .6rem;
+}
+.orders .all{
+    padding-bottom: .1rem;
+    box-sizing: border-box;
+}
+.orders .all .icon{
+    font-size: .7rem;
+}
+.orders .assess{
+    padding-bottom: .1rem;
+    box-sizing: border-box;
+}
+.orders .assess .icon{
+    font-size: .7rem;
+}
+.orders .change{
+    padding-bottom: .15rem;
+    box-sizing: border-box;
+}
+.orders .change .icon{
+    font-size: .75rem;
+}
+

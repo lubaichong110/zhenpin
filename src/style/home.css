@@ -1,0 +1,152 @@
+
+.home{
+    width: 100%;
+    background: #ededed;
+
+}
+.logo{
+    width: 100%;
+    height: 9rem;
+    background: url(https://pic2.zhen.com/uploadimg1/051aa574ff81e3deef1d6e6163cfe33c.jpg) no-repeat center center;
+    background-size: 100% 9rem
+}
+.nav{
+    width: 100%;
+    height: 2.3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff;
+}
+.nav li{
+    width: 15%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.nav li p{
+    color: #7f7f7f;
+    font-size: .1rem;
+}
+.nav li .icon{
+    font-size: .9rem;
+    color: #d21034;
+    height: 1.3rem;
+    
+}
+.nav li .icon-yaoyiyao{
+    font-size: 1.0rem;
+   
+}
+.seckill{
+    width: 100%;
+    height: 100%;
+    margin-top: .3rem;
+    margin-bottom: .3rem;
+}
+.seckill .title{
+    width: 100%;
+    height: 1.5rem;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .25rem;
+    box-sizing: border-box;
+    color: #4c4c4c;
+}
+.seckill .title p{
+    font-size: .4rem
+}
+.seckill .title .icon{
+    font-size: .1rem
+}
+.seckill .seckillShop{
+    width: 100%;
+    height: 6rem;
+    background: #fff;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: .4rem 0;
+    box-sizing: border-box;
+}
+.seckill .seckillList{
+    width: 3rem;
+    height: 4rem;
+    /*background: red;*/
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     margin-left: .5rem;
+}
+.seckill .seckillList img{
+    width: 2.3rem;
+    height: w.9rem
+}
+.seckill .seckillList .seckillName{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.active{
+    width: 100%;
+    height: 6.5rem;
+    background: #fff;
+    display: flex;
+
+}
+.active img{
+    width: 50%;
+    height: 6.5rem;
+}
+.shopList{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: .3rem;
+    margin-bottom: 1.75rem;
+}
+.shopList .shopInfo{
+     width: 100%;
+    height: 100%;
+    background: #fff;
+}
+.shopList .show,.shopList .show img{
+    width: 100%;
+    height: 7rem;
+}
+.shopInfo2{
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    overflow: hidden;
+}
+.shopInfo2 .shopInfolist{
+    width: 3.2rem;
+    height: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.5rem;
+}
+.shopInfo2 .shopInfolist img{
+    width: 2.2rem;
+    height: 2.47rem;
+
+}
+.shopInfo2 .shopInfolist .shopName{
+    color: #7f7f7f;
+   font-size: .3rem;
+}
+.shopInfo2 .shopInfolist .shopPrice{
+   color: #e36d83;
+   font-size: .3rem;
+}
