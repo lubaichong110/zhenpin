@@ -1,0 +1,165 @@
+#detail{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #e5e5e5;
+    margin-top: 28px;
+    margin-bottom: 1.75rem
+}
+#detail .good_scan{
+    width: 97%;
+    height: 12.8rem;
+}
+#detail .good_scan .good_scan_pic{
+    width: 100%;
+    height: 78%;
+    border-bottom: 1px solid #f4f4f4;
+    box-sizing: border-box;
+}
+#detail .good_scan .ant-carousel{
+    width: 100%;
+    height: 100%;
+}
+#detail .good_scan .ant-carousel .my-carousel{
+    width: 100%;
+    height: 100%
+}
+#detail .good_scan .ant-carousel .my-carousel .slick-list{
+    width: 100%;
+    height: 100%
+}
+#detail .good_scan .ant-carousel .my-carousel .slick-list .slick-track{
+    width: 100%;
+    height: 100%
+}
+#detail .good_scan .ant-carousel .my-carousel .slick-list .slick-track .img_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+#detail .good_scan .ant-carousel .my-carousel .slick-list .slick-track img{
+    width: 60%;
+    height: 60%
+}
+
+#detail .good_scan .ant-carousel .slick-dots li.slick-active button{
+    background: #000;
+}
+#detail .good_scan .ant-carousel .slick-dots li button {
+    background: #666;
+}
+#detail .good_scan .ant-carousel .slick-dots{
+    bottom: 0.7rem
+}
+.good_scan .good_title_price{
+    padding:0.3rem 0.4rem;
+    box-sizing: border-box;
+    font-size: 0.4rem;
+    color: #585858;
+    background: #fff;
+    height: 22%;
+}
+.good_scan .good_title_price .good_title{
+    height: 70%
+}
+.good_scan .good_title_price .good_price .rmb{
+    font-size: 0.33rem;
+    margin-right: 0.07rem
+}
+.good_scan .good_title_price .good_price{
+    font-size: 0.43rem;
+}
+#detail .good_choose{
+    width: 97%;
+    background: blue;
+    padding: 0 0.32rem;
+    box-sizing: border-box;
+    margin-top: 0.3rem;
+    background: #fff;
+    border-bottom: 1px solid #f0f0f0;
+}
+.good_choose .good_color{
+    width: 100%;
+    padding: 0.6rem 0;
+    font-size: 0.35rem;
+    color: #999999;
+    border-bottom: 1px solid #ebebeb;
+}
+.good_choose .good_color .color_title{
+    float: left
+}
+.good_choose .choose_color{
+    margin-left: 0.2rem;
+    width: 87%;
+    overflow: auto;
+    margin-top: -0.15rem
+}
+.good_choose .choose_color .choose_color_span{
+    float: left;
+    padding: 0.13rem 0.18rem;
+    border: 1px solid #c1c1c1;
+    margin-left: 0.25rem;
+    border-radius: 0.4rem;
+    color:#b2b2b2;
+    margin-top: 0.15rem
+}
+.good_choose .choose_color .choose_color_span.c_active{
+    border: 1px solid #da3957;
+    color:#da3957;
+}
+#detail .good_choose{
+    width: 97%;
+    background: blue;
+    padding: 0 0.32rem;
+    box-sizing: border-box;
+    margin-top: 0.3rem;
+    background: #fff;
+}
+.good_size{
+    width: 100%;
+    padding: 0.6rem 0;
+    font-size: 0.35rem;
+    color: #999999;
+    border-bottom: 1px solid #ebebeb;
+}
+.good_choose .good_size .size_title{
+    float: left
+}
+.good_choose .choose_size{
+    margin-left: 0.2rem;
+    width: 87%;
+    overflow: auto;
+    margin-top: -0.15rem
+}
+.good_choose .choose_size .choose_size_span{
+    float: left;
+    padding: 0.13rem 0.18rem;
+    border: 1px solid #c1c1c1;
+    margin-left: 0.25rem;
+    border-radius: 0.4rem;
+    color:#b2b2b2;
+    margin-top: 0.15rem
+}
+.good_choose .choose_size .choose_size_span.c_active{
+    border: 1px solid #da3957;
+    color:#da3957;
+}
+.good_send{
+    width: 100%;
+    padding: 0.6rem 0;
+    font-size: 0.35rem;
+    color: #999999;
+    border-bottom: 1px solid #ebebeb;
+    overflow: hidden;
+}
+.good_send .send_title{
+    float: left
+}
+.good_send .send_ul{
+    margin-left: 0.2rem;
+    width: 87%;
+    overflow: auto;
+    float: left
+}

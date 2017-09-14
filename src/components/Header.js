@@ -2,6 +2,7 @@ import React from 'react'
 import {
     connect
 } from 'react-redux'
+import "../styles/Header.css"
 import {
     Input
 } from 'antd';
@@ -12,7 +13,7 @@ class HeaderUI extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="header">
                 <Search
                     placeholder="input search text"
                     style={{ width: 200 }}
