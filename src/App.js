@@ -14,7 +14,7 @@ import My from "./components/My.js"
 import Header from "./components/Header.js"
 
 //配置路由
-const BasicExample = () => (
+const App = () => (
   <Router>
     <div className="app_wrap">
       <Header></Header>
@@ -35,4 +35,4 @@ const BasicExample = () => (
     </div>
   </Router>
 )
-export default BasicExample
+export default App
