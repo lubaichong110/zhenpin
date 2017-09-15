@@ -1,5 +1,6 @@
 import React from 'react';
 import  '../styles/detail.css';
+import { Carousel } from 'antd-mobile';
 
 class Detail extends React.Component{
     render(){
@@ -7,7 +8,19 @@ class Detail extends React.Component{
             <div id="detail">
                 <div className="good_scan">
                     <div className="good_scan_pic">
-                       
+                       <Carousel
+                          className="my-carousel"
+                          autoplay={false}
+                          infinite
+                          selectedIndex={1}
+                          swipeSpeed={35}
+                          beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
+                          afterChange={index => console.log('slide to', index)}
+                        >
+                            <div className="img_div"><img src="https://pic2.zhen.com/uploadimg1/450_d8cf44550ee9609f6f1f970bdde7808b.JPG" alt=""/></div>
+                            <div className="img_div"><img src="https://pic2.zhen.com/uploadimg1/450_d8cf44550ee9609f6f1f970bdde7808b.JPG" alt=""/></div>
+                            <div className="img_div"><img src="https://pic2.zhen.com/uploadimg1/450_d8cf44550ee9609f6f1f970bdde7808b.JPG" alt=""/></div>
+                        </Carousel>
                     </div>
                     <div className="good_title_price">
                         <div className="good_title">
@@ -45,16 +58,18 @@ class Detail extends React.Component{
                             <li className="send_li">由珍品特约合作商发货</li>
                         </ul>
                     </div>
-                    <div className="good_promise">
-                        <section>
-                            <i className="iconfont icon-duihao"></i>
-                            正品保证
-                        </section>
-                        <section>
-                            <i className="iconfont icon-duihao"></i>
-                            正品保证
-                        </section>
-                    </div>
+                    
+                </div>
+            
+                <div className="good_promise">
+                    <section>
+                        <i className="iconfont icon-duihao"></i>
+                        正品保证
+                    </section>
+                    <section>
+                        <i className="iconfont icon-duihao"></i>
+                        正品保证
+                    </section>
                 </div>
             </div>
         )

@@ -14,6 +14,7 @@ import My from "./components/My.js"
 import Header from "./components/Header.js"
 import Detail from './components/Detail.js'
 import List from "./components/List.js"
+import Cart from './components/Cart.js'
 
 //配置路由
 const App = () => (
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/my" component={My}/>
           <Route path="/detail" component={Detail}/>
           <Route path="/list" component={List}/>
+          <Route path="/cart" component={Cart}/>
       </div>
       <div className="foot_bar">
         <div><Link to="/"><i className="iconfont icon-home"></i>首页</Link></div>
