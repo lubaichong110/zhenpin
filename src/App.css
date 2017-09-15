@@ -37,7 +37,9 @@
 .header{
     position: fixed;
     left: 0;
-    top: 0
+    top: 0;
     height: 100%;
+}
+.app_container{
     margin: 1.5rem 0 1.75rem 0;
 }
