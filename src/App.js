@@ -23,7 +23,7 @@ const App = () => (
       <Header></Header>
       <div className="app_container">
           <Route exact path="/" component={Home}/>
-          <Route path="/discover" component={Classify}/>
+          <Route path="/classify" component={Classify}/>
           <Route path="/zhenxuan" component={Zhenxuan}/>
           <Route path="/brand" component={Brand}/>
           <Route path="/my" component={My}/>
