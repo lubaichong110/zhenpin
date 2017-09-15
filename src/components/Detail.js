@@ -1,6 +1,5 @@
 import React from 'react';
 import  '../styles/detail.css';
-import { Carousel } from 'antd';
 
 class Detail extends React.Component{
     render(){
@@ -8,17 +7,7 @@ class Detail extends React.Component{
             <div id="detail">
                 <div className="good_scan">
                     <div className="good_scan_pic">
-                       <Carousel
-                          className="my-carousel"
-                          autoplay={false}
-                          infinite
-                          selectedIndex={1}
-                          swipeSpeed={35}
-                        >
-                            <div className="img_div"><img src="https://pic2.zhen.com/uploadimg1/450_c3b52036c720c5c4953de4e27ff866c0.jpg" alt=""/></div>
-                            <div className="img_div"><img src="https://pic2.zhen.com/uploadimg1/450_c3b52036c720c5c4953de4e27ff866c0.jpg" alt=""/></div>
-                            <div className="img_div"><img src="https://pic2.zhen.com/uploadimg1/450_c3b52036c720c5c4953de4e27ff866c0.jpg" alt=""/></div>
-                        </Carousel>
+                       
                     </div>
                     <div className="good_title_price">
                         <div className="good_title">
