@@ -13,6 +13,7 @@ import Brand from "./components/Brand.js"
 import My from "./components/My.js"
 import Header from "./components/Header.js"
 import Detail from './components/Detail.js'
+import List from "./components/List.js"
 
 //配置路由
 const App = () => (
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/brand" component={Brand}/>
           <Route path="/my" component={My}/>
           <Route path="/detail" component={Detail}/>
+          <Route path="/list" component={List}/>
       </div>
       <div className="foot_bar">
         <div><Link to="/"><i className="iconfont icon-home"></i>首页</Link></div>

@@ -82,7 +82,7 @@ class ClassifyUI extends React.Component {
                                                  goods_arr.map((g_item,index)=>{
                                                     return(
                                                         <li key={"g"+index}>
-                                                            <Link to="/">
+                                                            <Link to="/list">
                                                                 <img src="https://pic2.zhen.com/uploadimg1/9d1e868743aaf9839449577b5dcecd74.jpg" />
                                                                 <div className="g_name">{g_item}</div>
                                                             </Link>

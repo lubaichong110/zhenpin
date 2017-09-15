@@ -1,6 +1,0 @@
-{
-  "devDependencies": {
-    "antd-mobile": "^1.6.7",
-    "babel-plugin-import": "^1.4.0"
-  }
-}
