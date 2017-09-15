@@ -4,7 +4,7 @@ import {
 } from 'react-redux'
 import '../style/home.css'
 import "../iconfont/iconfont.css"
-import ReactSwipe from 'react-swipes'
+
 
 
 class HomeUI extends React.Component {

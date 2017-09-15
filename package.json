@@ -1,9 +1,9 @@
 {
-  "name": "otbhome",
+  "name": "zhenpin",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "antd-mobile": "^1.6.7",
+    "antd-mobile": "^2.0.0-beta.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
@@ -16,15 +16,11 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "antd": "^2.13.1",
-    "antd-mobile": "^1.6.7",
-    "babel-plugin-import": "^1.4.0",
     "iscroll": "^5.2.0",
     "iscroll-react": "^1.0.3",
     "node-sass-chokidar": "^0.0.3",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
-    "react-swipes": "^1.0.6",
     "redux": "^3.7.2"
   }
 }

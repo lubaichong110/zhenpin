@@ -76,8 +76,41 @@ export default class My extends React.Component {
                             
                     <div className="isMy">
                         <div className="isTop">
+                            <div className="buy">
+                                <i className="icon iconfont icon-icongwd"></i>
+                                <p>购物袋</p>
+                            </div>
+                             <div className="collection">
+                                 <i className="icon iconfont icon-sccollection"></i>
+                                 <p>收藏</p>
+                            </div>
+                             <div className="attention">
+                                <i className="icon iconfont icon-pinpai-"></i>
+                                <p>关注品牌</p>
+                            </div>
+                             <div className="vip">
+                              <i className="icon iconfont icon-VIP"></i>
+                              <p>珍品会员</p>
+                            </div>
                         </div>
-                        <div className="isBottom"></div>
+                        <div className="isBottom">
+                            <div className="footprint">
+                                <i className="icon iconfont icon-zuji"></i>
+                                <p>我的足迹</p>
+                            </div>
+                             <div className="activity">
+                                <i className="icon iconfont icon-kaifangjijin"></i>
+                                <p>珍会花</p>
+                            </div>
+                             <div className="online">
+                             <i className="icon iconfont icon-kefu1"></i>
+                             <p>在线客服</p>
+                            </div>
+                             <div className="help">
+                             <i className="icon iconfont icon-help"></i>
+                             <p>帮助/反馈</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

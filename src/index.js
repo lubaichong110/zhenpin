@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import "./iconfont/iconfont.css"
 import registerServiceWorker from './registerServiceWorker';
+import 'antd-mobile/dist/antd-mobile.css';
 import {
     createStore,
     combineReducers
