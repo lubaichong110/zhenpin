@@ -112,6 +112,9 @@ export default class My extends React.Component {
                             </div>
                         </div>
                     </div>
+                    <div className="telMe">
+                        <p><i className="icon iconfont icon-rexiandianhua"></i>时尚服务热线  400-009-6666</p>
+                    </div>
                 </div>
             </div>
         )

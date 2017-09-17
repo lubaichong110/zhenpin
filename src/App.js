@@ -14,12 +14,13 @@ import My from "./components/My.js"
 import Header from "./components/Header.js"
 import Detail from './components/Detail.js'
 import List from "./components/List.js"
+import Login from "./components/Login.js"
 
 //配置路由
 const App = () => (
   <Router>
     <div className="app_wrap">
-      <Header></Header>
+     
       <div className="app_container">
           <Route exact path="/" component={Home}/>
           <Route path="/discover" component={Classify}/>
@@ -28,6 +29,9 @@ const App = () => (
           <Route path="/my" component={My}/>
           <Route path="/detail" component={Detail}/>
           <Route path="/list" component={List}/>
+          <Route path="/login" component={Login}/>
+       
+
       </div>
       <div className="foot_bar">
         <div><Link to="/"><i className="iconfont icon-home"></i>首页</Link></div>
