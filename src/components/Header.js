@@ -4,12 +4,14 @@ import {
 } from 'react-redux'
 import "../styles/Header.css"
 class HeaderUI extends React.Component {
-    componentDidMount() {
+    componentWillMount() {
         // this.props.fetchListData();
+        
     }
     render() {
         return (
-            <div className="header">
+            <div className="header" ref="header">
+            
             </div>
         )
     }

@@ -1,0 +1,104 @@
+#cart{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #e5e5e5;
+    margin-top: 1.5rem;
+    min-height:100%;
+    overflow: hidden;  
+    margin-bottom: 1.75rem
+}
+.app_container{
+    width: 100%;
+    height: 100%;
+}    
+.cart_content{
+    width: 96%;
+    margin-top: 0.3rem;
+    border-radius: 0.18rem;
+    margin-bottom: 0.3rem
+}
+.cart_content_li{
+    width: 100%;
+    height: 2.7rem;
+    background: #fff;
+    border-bottom: 1px #666 solid;
+    padding: 0.28rem 0 0.18rem 0;
+    box-sizing: border-box;
+}
+.ipt_checkbox{
+    height: 100%;
+    width: 10% ;
+    display: flex;
+    align-items: center;
+    float: left
+}
+.ipt_checkbox .am-list-item{
+    padding-left: 0.15rem !important;
+}
+.am-list-line{
+    padding-right: 0 !important;
+}
+.am-list-thumb{
+    margin-right: 0 !important;
+}
+.c_good_right{
+    width: 86%;
+    float:left;
+    height: 100%;
+
+}
+.c_good_right .c_good_pic{
+    float: left;
+    height: 100%;
+    width: 27.5%;
+    border: 2px solid #ebebeb;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.c_good_right .c_good_pic img{
+    width: 62%;
+    height: 62%;
+}
+.c_good_right .c_good_detail{
+    float: left;
+    width: 69% ;
+    height:100%;
+    margin-left: 3%;
+    color: #4c4c4c;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+.c_good_name{
+    width: 100%;
+    height: 0.54rem;
+    font-size: 0.37rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.c_good_size{
+    font-size: 0.37rem;
+    
+}
+.c_good_price{
+    font-size: 0.38rem;
+}
+.count_stepper{
+    position: absolute;
+    right: 0.1rem;
+    bottom: -0.1rem;
+    width: 2.5rem;
+}
+.am-stepper-handler, .am-stepper-handler-up-inner, .am-stepper-handler-down-inner{
+    width: 0.66rem !important;
+    height: 0.66rem !important;
+}
+.am-stepper-handler, .am-stepper-handler-up-inner, .am-stepper-handler-down-inner{
+    line-height: 0.66rem !important;
+}

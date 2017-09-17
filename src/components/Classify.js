@@ -54,7 +54,8 @@ class ClassifyUI extends React.Component {
             "长袖polo衫"
         ]
         return (
-            <div className="classify_container">
+            <div className="classify_box">
+                <div className="classify_container">
                 <div className="class_left">
                 <IScroll iScroll={iscroll}>
                     <ul>
@@ -98,6 +99,7 @@ class ClassifyUI extends React.Component {
 
                     }
                 </div>
+            </div>
             </div>
         )
     }

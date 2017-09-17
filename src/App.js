@@ -20,7 +20,7 @@ import Login from "./components/Login.js"
 const App = () => (
   <Router>
     <div className="app_wrap">
-     
+     <Header></Header>
       <div className="app_container">
           <Route exact path="/" component={Home}/>
           <Route path="/discover" component={Classify}/>
