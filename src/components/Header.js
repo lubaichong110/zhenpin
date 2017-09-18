@@ -2,16 +2,28 @@ import React from 'react'
 import {
     connect
 } from 'react-redux'
+import {
+    InputItem
+} from 'antd-mobile';
 import "../styles/Header.css"
 class HeaderUI extends React.Component {
-    componentWillMount() {
+    componentDidMount() {
         // this.props.fetchListData();
-        
+        // if (window.)
     }
     render() {
         return (
-            <div className="header" ref="header">
-            
+            <div className="header" >
+                <div className="headerHome">
+                   <span>珍品</span>
+                   <div className="search">
+                        <div>
+                            <i className="icon iconfont icon-sousuo"></i>
+                             <span>腕表</span>
+                        </div>
+                   </div>
+                    <i className="icon iconfont icon-icongwd"></i>
+                </div>
             </div>
         )
     }

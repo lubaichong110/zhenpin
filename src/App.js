@@ -16,11 +16,13 @@ import Detail from './components/Detail.js'
 import List from "./components/List.js"
 import Login from "./components/Login.js"
 
+
+
 //配置路由
 const App = () => (
   <Router>
     <div className="app_wrap">
-     <Header></Header>
+     <Header></Header> 
       <div className="app_container">
           <Route exact path="/" component={Home}/>
           <Route path="/discover" component={Classify}/>
@@ -30,6 +32,8 @@ const App = () => (
           <Route path="/detail" component={Detail}/>
           <Route path="/list" component={List}/>
           <Route path="/login" component={Login}/>
+      
+     
        
 
       </div>

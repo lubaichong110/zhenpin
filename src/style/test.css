@@ -1,0 +1,19 @@
+.row {
+  padding: 0 15px;
+  background-color: white;
+}
+.row-title {
+  height: 50px;
+  line-height: 50px;
+  color: #888;
+  font-size: 18px;
+  border-bottom: 1px solid #F6F6F6;
+}
+.row-text {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1;
+}
+.am-refresh-control-deactive .am-refresh-control-ptr-icon {
+  display: block;
+}
