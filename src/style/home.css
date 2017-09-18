@@ -1,4 +1,12 @@
-
+.am-list .am-list-header{
+    padding: 0;
+}
+.app_wrap .app_container .am-list-view-scrollview .am-list-view-scrollview-content{
+    position: relative !important;
+}
+.am-refresh-control-deactive .am-refresh-control-ptr-icon {
+  display: block;
+}
 .home{
     width: 100%;
     background: #ededed;
@@ -69,7 +77,13 @@
     background: #fff;
     border-top: 1px solid #f0f0f0;
     display: flex;
-    align-items: center;
+   
+}
+.seckill .seckillShop .ishot{
+    height: 6rem;
+    background: #fff;
+    display: flex;
+     align-items: center;
     overflow: hidden;
     padding: .4rem 0;
     box-sizing: border-box;
@@ -111,7 +125,7 @@
     display: flex;
     flex-direction: column;
     margin-top: .3rem;
-    margin-bottom: 1.75rem;
+    
 }
 .shopList .shopInfo{
      width: 100%;
@@ -127,6 +141,9 @@
     height: 6rem;
     display: flex;
     overflow: hidden;
+}
+.shopInfo2 .isShop{
+    display: flex;
 }
 .shopInfo2 .shopInfolist{
     width: 3.2rem;
