@@ -5,7 +5,6 @@
     align-items: center;
     background: #e5e5e5;
     margin-top: 1.5rem;
-    margin-bottom: 1.75rem
 }
 
 #detail .good_scan{
@@ -176,4 +175,71 @@
 .good_promise section i{
     margin-right: 0.1rem;
     color: #e38596;
+}
+.brand_intro{
+    width: 97%;
+    background: #fff;
+    margin-top: 0.3rem;
+    padding: 0 0.3rem;
+    box-sizing: border-box;
+}
+.brand_intro .d_brand_pic{
+    width: 100%;
+    height: 4rem
+}
+.brand_title{
+    width: 100%;
+    height: 1.33rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px #f0f0f0 solid;
+}
+.brand_title .d_brand_name{
+     color: #4c4c4c
+}
+.d_brand_content{
+    width: 100%;
+}
+.d_brand_content .d_brand_pic{
+    width: 100%;
+    height: 2.9rem;
+    display: flex;
+    justify-content: center;
+}
+.d_brand_content .d_brand_pic img{
+    height: 100%;
+}
+.d_brand_content .brand_content_text{
+    color: #4c4c4c;
+    width: 100%;
+    padding: 0.3rem 0;
+    line-height: 0.55rem;
+}
+.to_pic_detail{
+    width: 97%;
+    height: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.to_pic_detail i{
+    display: inline-block;
+    width: 0.34rem;
+    height: 0.34rem;
+    border:1px solid #565656;
+    border-radius: 50%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.2rem
+}
+.to_pic_detail  .icon-xiangyou{
+    font-size: 0.2rem;
+}
+#detailpic{
+    width: 100%;
+    height: 100%;
+    margin-top: 1.5rem
 }

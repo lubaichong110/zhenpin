@@ -4,14 +4,18 @@ import {
 } from 'react-redux'
 import "../styles/Header.css"
 class HeaderUI extends React.Component {
-    componentWillMount() {
+    componentDidMount() {
         // this.props.fetchListData();
+        if(window.location.pathname == "/detail"){
+            // this.refs.headerf.style.display = "none"
+            this.refs.header.style.display = "block"
+        }
         
     }
     render() {
         return (
             <div className="header" ref="header">
-            
+                
             </div>
         )
     }

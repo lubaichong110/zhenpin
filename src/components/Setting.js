@@ -1,16 +1,24 @@
 import React from 'react';
 import '../styles/Setting.css';
-import { List, Switch } from 'antd-mobile';
-import { createForm } from 'rc-form';
+import {
+    List,
+    Switch
+}
+from 'antd-mobile';
+import {
+    createForm
+}
+from 'rc-form';
 const Item = List.Item;
-const Brief = Item.Brief;
 class Setting extends React.Component {
     state = {
         disabled: false,
         value: 1
     }
-    render(){
-        const { getFieldProps } = this.props.form;
+    render() {
+        const {
+            getFieldProps
+        } = this.props.form;
         return (
             <div id="setting">
                 <div className="localCache">
@@ -29,7 +37,7 @@ class Setting extends React.Component {
                   </List>
                 </div>
             </div>
-                
+
         )
 
     }
