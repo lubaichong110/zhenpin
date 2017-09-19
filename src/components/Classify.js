@@ -2,6 +2,7 @@ import React from 'react'
 import "../styles/Classify.css"
 import IScroll from "iscroll-react"
 import iscroll from "iscroll"
+import axios from 'axios';
 import {
     setDefaultIScrollOptions
 } from "iscroll-react"
@@ -15,7 +16,13 @@ import {
 } from 'react-redux'
 class ClassifyUI extends React.Component {
     componentDidMount() {
-
+			axios.get('/api/getbranddata')
+			  .then(function (res) {
+			    console.log(res);
+			  })
+			  .catch(function (error) {
+			    console.log(error);
+			  });
     }
     render() {
         var menu_arr = ["服装",
@@ -61,7 +68,7 @@ class ClassifyUI extends React.Component {
                     <ul>
                         {
                             menu_arr.map((item,index)=>{
-                                console.log(item)
+                                //console.log(item)
                                 return (
                                     <li key={"m"+index}>{item}</li>
                                     )  

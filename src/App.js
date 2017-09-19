@@ -14,7 +14,6 @@ import My from "./components/My.js"
 import Header from "./components/Header.js"
 import Detail from './components/Detail.js'
 import List from "./components/List.js"
-
 //配置路由
 const App = () => (
   <Router>
@@ -31,7 +30,7 @@ const App = () => (
       </div>
       <div className="foot_bar">
         <div><Link to="/"><i className="iconfont icon-home"></i>首页</Link></div>
-        <div><Link to="/discover"><i className="iconfont icon-fenlei1"></i>分类</Link></div>
+        <div><Link to="/classify"><i className="iconfont icon-fenlei1"></i>分类</Link></div>
         <div><Link to="/zhenxuan"><i className="iconfont icon-zhinanzhen"></i>珍选</Link></div>
         <div><Link to="/brand"><i className="iconfont icon-pinpai-"></i>品牌</Link></div>
         <div><Link to="/my"><i className="iconfont icon-wode"></i>我的</Link></div>
