@@ -1,0 +1,134 @@
+
+.loginpage{
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    padding-top: 4rem;
+    box-sizing: border-box;
+}
+.loginTab{
+    width: 80%;
+    height: 100%;
+
+}
+.loginTab .childBox{
+    width: 100%;
+    height: 10rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.loginTab .am-tabs-default-bar-tab-active{
+    color: #000;
+}
+.loginTab .am-tabs-default-bar-underline{
+        border: 2px #da3f4b solid;
+}
+.loginTab .userName input{
+    font-size: .4rem
+}
+.childBox .btn{
+    height: 1rem;
+    border-radius: 1rem;
+    background: #ddd;
+    margin: .5rem 0;
+  
+    line-height: 1rem;
+}
+.loginTab .childBox .am-button-primary:before{
+         border: 1px solid #ddd; 
+}
+.loginTab .childBox .forget{
+    text-align: center;
+    color: #ddd;
+    font-size: .2rem;
+}
+.loginTab .childBox .tellme{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+.loginTab .childBox .weChart .box,.loginTab .childBox .qq .box{
+    width: 1.2rem;
+    height: 1.2rem;
+    border:1px solid #ddd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginTab .weChart .box .icon{
+    font-size: .6rem;
+    color: #55da3f;
+}
+.loginTab .qq .box .icon{
+    font-size: .5rem;
+    color: #3f8cda;
+}
+.loginTab .tellme p{
+    font-size: .2rem;
+    color: #ddd;
+    margin-top: .1rem;
+}
+.childBox2 input{
+    border:none;
+
+}
+.childBox2 .regiser{
+    padding: 0 .5rem;
+    box-sizing: border-box;
+}
+.childBox2 .regiser div{
+    width: 100%;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    border-bottom: 1px solid #ddd;
+    color: #eee;
+    font-size: .3rem;
+}
+.childBox2 .regiser .b{
+    border: none;
+}
+.childBox2 .regiser .phone{
+    width: 65%;
+}
+.childBox2 .regiser .getPwd{
+    width: 35%;
+    height: .6rem;
+    border: 1px solid #ddd;
+    border-radius: .8rem;
+    text-align: center;
+    line-height: .6rem;
+    background: none;
+    font-size: .2rem;
+    color: #ddd;
+}
+.childBox2 .regiserBtn{
+    width: 100%;
+    height: 1rem;
+    background: #ddd;
+    color: #fff;
+    border-radius: 1rem;
+    text-align: center;
+    line-height: 1rem;
+    font-size: .45rem;
+    border: none;
+}
+.childBox2 p{
+    width: 100%;
+    text-align: center;
+    font-size: .2rem;
+    color: #ddd;
+}
+.childBox2 p span{
+    margin-left: .1rem;
+    color: #000;
+}

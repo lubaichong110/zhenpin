@@ -4,9 +4,9 @@
     flex-direction: column;
     align-items: center;
     background: #e5e5e5;
-    margin-top: 28px;
-    margin-bottom: 1.75rem
+    margin-top: 1.5rem;
 }
+
 #detail .good_scan{
     width: 97%;
     height: 12.8rem;
@@ -17,41 +17,36 @@
     border-bottom: 1px solid #f4f4f4;
     box-sizing: border-box;
 }
-#detail .good_scan .ant-carousel{
+.my-carousel{
+    width: 100%;
+    height: 100% !important;
+}
+.my-carousel .slider-frame{
+    width: 100%;
+    height: 100% !important;
+}
+.my-carousel .slider-frame .slider-list{
+    width: 100%;
+    height: 100% !important;
+}
+.my-carousel .slider-frame .slider-slide{
+    width: 100%;
+    height: 100% !important;
+}
+.my-carousel .slider-frame .slider-list .img_div{
     width: 100%;
     height: 100%;
-}
-#detail .good_scan .ant-carousel .my-carousel{
-    width: 100%;
-    height: 100%
-}
-#detail .good_scan .ant-carousel .my-carousel .slick-list{
-    width: 100%;
-    height: 100%
-}
-#detail .good_scan .ant-carousel .my-carousel .slick-list .slick-track{
-    width: 100%;
-    height: 100%
-}
-#detail .good_scan .ant-carousel .my-carousel .slick-list .slick-track .img_div{
     display: flex;
     justify-content: center;
     align-items: center;
     background: #fff;
 }
-#detail .good_scan .ant-carousel .my-carousel .slick-list .slick-track img{
-    width: 60%;
-    height: 60%
+.my-carousel .slider-frame .slider-list .img_div img{
+    width: 50%;
+    height: 50%;
 }
-
-#detail .good_scan .ant-carousel .slick-dots li.slick-active button{
-    background: #000;
-}
-#detail .good_scan .ant-carousel .slick-dots li button {
-    background: #666;
-}
-#detail .good_scan .ant-carousel .slick-dots{
-    bottom: 0.7rem
+.my-carousel .slider-decorator-0{
+    bottom: 0.5rem !important;
 }
 .good_scan .good_title_price{
     padding:0.3rem 0.4rem;
@@ -162,4 +157,89 @@
     width: 87%;
     overflow: auto;
     float: left
+}
+.good_promise{
+    width: 97%;
+    background: #f8f8f8;
+    overflow: auto;
+    padding: 0 0.3rem;
+    box-sizing: border-box;
+}
+.good_promise section{
+    float: left;
+    margin-right: .3rem;
+    color: #999999;
+    font-size: 0.35rem;
+    padding: 0.3rem 0
+}
+.good_promise section i{
+    margin-right: 0.1rem;
+    color: #e38596;
+}
+.brand_intro{
+    width: 97%;
+    background: #fff;
+    margin-top: 0.3rem;
+    padding: 0 0.3rem;
+    box-sizing: border-box;
+}
+.brand_intro .d_brand_pic{
+    width: 100%;
+    height: 4rem
+}
+.brand_title{
+    width: 100%;
+    height: 1.33rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px #f0f0f0 solid;
+}
+.brand_title .d_brand_name{
+     color: #4c4c4c
+}
+.d_brand_content{
+    width: 100%;
+}
+.d_brand_content .d_brand_pic{
+    width: 100%;
+    height: 2.9rem;
+    display: flex;
+    justify-content: center;
+}
+.d_brand_content .d_brand_pic img{
+    height: 100%;
+}
+.d_brand_content .brand_content_text{
+    color: #4c4c4c;
+    width: 100%;
+    padding: 0.3rem 0;
+    line-height: 0.55rem;
+}
+.to_pic_detail{
+    width: 97%;
+    height: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.to_pic_detail i{
+    display: inline-block;
+    width: 0.34rem;
+    height: 0.34rem;
+    border:1px solid #565656;
+    border-radius: 50%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.2rem
+}
+.to_pic_detail  .icon-xiangyou{
+    font-size: 0.2rem;
+}
+#detailpic{
+    width: 100%;
+    height: 100%;
+    margin-top: 1.5rem
 }

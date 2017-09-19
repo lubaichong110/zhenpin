@@ -1,5 +1,5 @@
 {
-  "name": "zhenpin",
+  "name": "otbhome",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,17 +16,17 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-
     "css-loader": "^0.28.7",
-
     "iscroll": "^5.2.0",
     "iscroll-react": "^1.0.3",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
     "node-sass-chokidar": "^0.0.3",
+    "rc-form": "^1.4.8",
+    "rc-tabs": "^9.1.4",
+    "react-iscroll": "^2.0.3",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
-    "react-swipes": "^1.0.6",
     "redux": "^3.7.2",
     "style-loader": "^0.18.2",
     "svg-sprite-loader": "^0.3.1"

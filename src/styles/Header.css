@@ -5,5 +5,24 @@
     top: 0;
     z-index: 999;
     background: #fafafa;
+    left: 0;
     border-bottom: 1px solid #ddd;
+}
+.headerHome{
+    width: 100%;
+    height: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .3rem;
+    box-sizing: border-box;
+}
+.headerHome .search{
+    width: 75%;
+    height: .9rem;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
 }
