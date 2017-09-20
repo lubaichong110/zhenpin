@@ -5,17 +5,19 @@ import {
     Tabs
 }
 from 'antd-mobile';
+import {
+    connect
+} from 'react-redux'
 const tabs = [{
     title: "图文详情"
 }, {
     title: "参数规格"
 }, ];
 
-class Detail extends React.Component {
+class DetailUI extends React.Component {
     constructor() {
         super();
         this.state = {
-            arr: ["白", "黑", "黄", "红", "蓝", "从"],
             good_id: "1001",
             good_id_arr: [],
             good_info: []
@@ -164,77 +166,77 @@ class Detail extends React.Component {
                                 onChange={(tab, index) => { console.log('onChange', index, tab); }}
                                 onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
                               >
-                                  <div className="childBox">
-                                      <div className="detail_content">
-                                      {
-                                          item.goods_img.map((item_detail_img,index)=>{
-                                            return(
-                                                <img key={"n" + index} src={item_detail_img}/>
-                                            )
-                                          })
-                                          
-                                      }
-                                      </div>
-                                  </div>
-                                  <div className="childBox childBox2" >
-                                      <div className="info_content">
-                                          <ul>
-                                            <li>
-                                              <span className="info_title">货号</span>
-                                              <span className="info_value">FY0551 K8F F0D9U</span>
-                                            </li>
-                                            <li>
-                                              <span className="info_title">商品编码</span>
-                                              <span className="info_value">3115516</span>
-                                            </li>
-                                            <li>
-                                              <span className="info_title">品牌</span>
-                                              <span className="info_value">Fendi</span>
-                                            </li>
-                                            <li>
-                                              <span className="info_title">品牌属地</span>
-                                              <span className="info_value">意大利</span>
-                                            </li>
-                                            <li>
-                                              <span className="info_title">水洗方式</span>
-                                              <span className="info_value">请依照水洗标签的提示进行洗涤</span>
-                                            </li>
-                                            <li>
-                                              <span className="info_title">备注</span>
-                                              <span className="info_value">请按照保养说明进行保养</span>
-                                            </li>
-                                            <li>
-                                              <span className="info_title">配件</span>
-                                              <span className="info_value">无</span>
-                                            </li>
-                                            <li>
-                                              <span className="info_title">材质</span>
-                                              <span className="info_value">100%棉</span>
-                                            </li>
-                                          </ul>
-                                      </div>
-                                  </div>
-                              </Tabs> 
-                              <div className="d_footer">
-                                   <div className='d_collect'>
-                                        <div className="d_collection">
-                                            <i className="iconfont icon-shoucang"></i>
-                                            <span>收藏</span>
-                                        </div>
-                                   </div> 
-                                   <div className='d_cart'>
-                                        <div className="foot_cart">
-                                            <i className="iconfont icon-gouwudai"></i>
-                                            <span>购物袋</span>
-                                        </div>
-                                   </div>
-                                   <div className='add_cart'>                                       
-                                            加入购物袋
-                                   </div>  
-                                   <div className="buynow">
-                                            立即购买
-                                    </div>
+                          <div className="childBox">
+                              <div className="detail_content">
+                              {
+                                  item.goods_img.map((item_detail_img,index)=>{
+                                    return(
+                                        <img key={"n" + index} src={item_detail_img}/>
+                                    )
+                                  })
+                                  
+                              }
                               </div>
+                          </div>
+                          <div className="childBox childBox2" >
+                              <div className="info_content">
+                                  <ul>
+                                    <li>
+                                      <span className="info_title">货号</span>
+                                      <span className="info_value">FY0551 K8F F0D9U</span>
+                                    </li>
+                                    <li>
+                                      <span className="info_title">商品编码</span>
+                                      <span className="info_value">3115516</span>
+                                    </li>
+                                    <li>
+                                      <span className="info_title">品牌</span>
+                                      <span className="info_value">Fendi</span>
+                                    </li>
+                                    <li>
+                                      <span className="info_title">品牌属地</span>
+                                      <span className="info_value">意大利</span>
+                                    </li>
+                                    <li>
+                                      <span className="info_title">水洗方式</span>
+                                      <span className="info_value">请依照水洗标签的提示进行洗涤</span>
+                                    </li>
+                                    <li>
+                                      <span className="info_title">备注</span>
+                                      <span className="info_value">请按照保养说明进行保养</span>
+                                    </li>
+                                    <li>
+                                      <span className="info_title">配件</span>
+                                      <span className="info_value">无</span>
+                                    </li>
+                                    <li>
+                                      <span className="info_title">材质</span>
+                                      <span className="info_value">100%棉</span>
+                                    </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </Tabs> 
+                      <div className="d_footer">
+                           <div className='d_collect'>
+                                <div className="d_collection">
+                                    <i className="iconfont icon-shoucang"></i>
+                                    <span>收藏</span>
+                                </div>
+                           </div> 
+                           <div className='d_cart'>
+                                <div className="foot_cart">
+                                    <i className="iconfont icon-gouwudai"></i>
+                                    <span>购物袋</span>
+                                </div>
+                           </div>
+                           <div className='add_cart' onClick={this.addCart}>                                       
+                                    加入购物袋
+                           </div>  
+                           <div className="buynow">
+                                    立即购买
+                            </div>
+                      </div>
                     </div>
                     )
                 })
@@ -244,4 +246,15 @@ class Detail extends React.Component {
         )
     }
 }
+const mapStateToProps = (state) => {
+    return {
+
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+
+    }
+}
+const Detail = connect(mapStateToProps, mapDispatchToProps)(DetailUI);
 export default Detail

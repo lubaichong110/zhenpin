@@ -18,6 +18,7 @@ import List from "./components/List.js"
 import Login from "./components/Login.js"
 import Footer from "./components/Footer.js"
 import Setting from './components/Setting.js'
+import Cart from './components/Cart.js'
 
 
 //配置路由
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/detail" component={Detail}/>
           <Route path="/list" component={List}/>
           <Route path="/login" component={Login}/>
+          <Route path="/cart" component={Cart}/>
       </div>
       <Footer></Footer>
     </div>

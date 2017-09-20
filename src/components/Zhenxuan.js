@@ -5,7 +5,7 @@ export default class Order extends React.Component {
         return (
             <div>
 	 
-	  </div>
+	        </div>
         )
     }
 }
