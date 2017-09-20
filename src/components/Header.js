@@ -14,6 +14,9 @@ class HeaderUI extends React.Component {
             // this.refs.headerf.style.display = "none"
             this.refs.header.style.display = "block"
         }
+        if (window.location.pathname == "/search") {
+            this.refs.header.style.display = "none"
+        }
 
     }
     render() {

@@ -15,8 +15,8 @@ import {
 } from 'react-redux'
 import ReducerObj from "./reducers/index.js"
 
-//const reducers = combineReducers(ReducerObj)
 const store = createStore(ReducerObj, {});
+
 const renderPage = () => {
     ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 }

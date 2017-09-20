@@ -1,21 +1,28 @@
 import React from 'react'
-import  '../styles/Cart.css';
-import { List, Checkbox, Flex,Stepper } from 'antd-mobile';
+import '../styles/Cart.css';
+import {
+  List,
+  Checkbox,
+  Flex,
+  Stepper
+} from 'antd-mobile';
 const CheckboxItem = Checkbox.CheckboxItem;
-class Cart extends React.Component{
-    constructor(){
-        super();
-        this.state = {
-            good_count: 1,
-        };
-    }
-    onChange = (good_count) => {
-        // console.log(val);
-        this.setState({ good_count });
-    }
-    render(){
-        return(
-            <div id="cart">
+class Cart extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      good_count: 1,
+    };
+  }
+  onChange = (good_count) => {
+    // console.log(val);
+    this.setState({
+      good_count
+    });
+  }
+  render() {
+    return (
+      <div id="cart">
                 <div className="cart_content">
                     <ul className="cart_content_ul">
                         <li className="cart_content_li">
@@ -204,9 +211,9 @@ class Cart extends React.Component{
                     </ul>
                 </div>
             </div>
-        )
-        
-    }
+    )
+
+  }
 }
 
 export default Cart;

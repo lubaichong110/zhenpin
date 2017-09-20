@@ -18,7 +18,8 @@ import List from "./components/List.js"
 import Login from "./components/Login.js"
 import Footer from "./components/Footer.js"
 import Setting from './components/Setting.js'
-
+import Cart from './components/Cart.js'
+import Search from './components/Search.js'
 
 //配置路由
 const App = () => (
@@ -34,6 +35,8 @@ const App = () => (
           <Route path="/detail/:id" component={Detail}/>
           <Route path="/list/:id" component={List}/>
           <Route path="/login" component={Login}/>
+          <Route path="/cart" component={Cart}/>
+          <Route path="/search" component={Search}/>
       </div>
       <Footer></Footer>
     </div>
