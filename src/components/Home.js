@@ -2,6 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom';
 import ReactIScroll from 'react-iscroll';
 import iScroll from 'iscroll';
+import {
+  Link
+} from 'react-router-dom'
 // import '../style/test.css'
 import '../style/home.css'
 import "../iconfont/iconfont.css"
@@ -10,14 +13,11 @@ import {
   RefreshControl,
   ListView
 } from 'antd-mobile';
+import Header from "./Header.js"
 
 const data = [{
 
-}, {
-
-}, {
-
-}, ];
+}];
 let index = data.length - 1;
 
 const NUM_ROWS = 20;
@@ -42,6 +42,8 @@ class Test extends React.Component {
       dataSource,
       refreshing: true,
       height: document.documentElement.clientHeight,
+      list: [],
+      listInfo: []
     };
   }
 
@@ -73,6 +75,7 @@ class Test extends React.Component {
         this.domScroller.options.preventDefaultOnTouchMove = undefined;
       }
     });
+    this.getData();
   }
 
   componentWillUnmount() {
@@ -147,20 +150,26 @@ class Test extends React.Component {
     ];
   }
 
+  getData() {
+    // console.log("1")
+    fetch("/api/getIndex").then((res) => {
+      return res.json();
+
+    }).then((data) => {
+      console.log(data)
+
+      this.setState({
+        list: data[0].brand
+
+      })
+
+
+      // console.log(this.state.listInfo)
+    })
+  }
+
   render() {
-    const separator = (sectionID, rowID) => ( < div key = {
-        `${sectionID}-${rowID}`
-      }
-      style = {
-        {
-          backgroundColor: '#F5F5F9',
-          height: 8,
-          borderTop: '1px solid #ECECED',
-          borderBottom: '1px solid #ECECED',
-        }
-      }
-      />
-    );
+
     const row = (rowData, sectionID, rowID) => {
       if (index < 0) {
         index = data.length - 1;
@@ -171,42 +180,41 @@ class Test extends React.Component {
            <div className="shopList">
                     
                     <div className="shopInfo">
+                      {
+                        this.state.list.map((item,index)=>{
+                          return(
+                            <div key={item.brand_id}>
                         <div className="show">
-                            <img src="https://pic2.zhen.com/uploadimg1/7bbe496f23c17f661084ccba339ab3af.jpg" alt=""/>
+                        <img src={item.brand_banner} alt=""/>
                         </div>
                         <div className="shopInfo2">
-                        <ReactIScroll iScroll = {iScroll} options = {{scrollX : true,scrollbars : false,mouseWheel : false,click:true }} > 
-                          <div className="isShop" style = {{width :'200%'}}>
-                            <div className="shopInfolist">
-                                <img src="https://pic2.zhen.com/uploadimg1/255_140031ab496209dec03371d2862de5d2.jpg" alt=""/>
-                                <p className="shopName">Gucci</p>
-                                <p className="shopPrice">￥15399</p>
-                            </div>
-                            <div className="shopInfolist">
-                                <img src="https://pic2.zhen.com/uploadimg1/255_140031ab496209dec03371d2862de5d2.jpg" alt=""/>
-                                <p className="shopName">Gucci</p>
-                                <p className="shopPrice">￥15399</p>
-                            </div>
-                            <div className="shopInfolist">
-                                <img src="https://pic2.zhen.com/uploadimg1/255_140031ab496209dec03371d2862de5d2.jpg" alt=""/>
-                                <p className="shopName">Gucci</p>
-                                <p className="shopPrice">￥15399</p>
-                            </div>
-                            <div className="shopInfolist">
-                                <img src="https://pic2.zhen.com/uploadimg1/255_140031ab496209dec03371d2862de5d2.jpg" alt=""/>
-                                <p className="shopName">Gucci</p>
-                                <p className="shopPrice">￥15399</p>
-                            </div>
-                            <div className="shopInfolist">
-                                <img src="https://pic2.zhen.com/uploadimg1/255_140031ab496209dec03371d2862de5d2.jpg" alt=""/>
-                                <p className="shopName">Gucci</p>
-                                <p className="shopPrice">￥15399</p>
-                            </div>
+                        <ReactIScroll iScroll = {iScroll} options = {{scrollX : true,scrollbars : false,mouseWheel : false,click:false }} > 
+                          <div className="isShop" style = {{width :'230%'}}>
+                          {
+                            item.brand_goods.map((items, indexs) => {
+                              return(
+                               
+
+                                  <div key={items.goods_id} className="shopInfolist">
+                                   <Link to={'/detail' + items.goods_id}>
+                                     <img src={items.goods_img[0]} alt=""/>
+                                     <p className="shopName">{items.goods_title}</p>
+                                     <p className="shopPrice">￥{items.goods_price}</p>
+                                    </Link>
+                                  </div>
+                                
+                                )
+                            })
+                            
+                           }
                             </div>
                           </ReactIScroll >
 
                         </div>
-
+                        </div>
+                            )
+                        })
+                      }
                     </div>
 
                 </div>
@@ -221,6 +229,7 @@ class Test extends React.Component {
       }
       renderHeader = {
         () => <div className="home">
+           <Header></Header>
                 <div className="logo"></div>
                 <ul className="nav">
                     <li>
@@ -247,28 +256,25 @@ class Test extends React.Component {
                         <i className="icon iconfont icon-xiangyou1"></i>
                     </div>
                     <div className="seckillShop" >
-                    <ReactIScroll iScroll = {iScroll} options = {{scrollX : true,scrollbars : false,mouseWheel : false,click:true }} > 
-                      <div className="ishot" style = {{width :'200%'}}>
-                        <div  className="seckillList">
-                            <img src="https://pic2.zhen.com/uploadimg1/300_c3b52036c720c5c4953de4e27ff866c0.jpg" />
-                            <p className="seckillName">Versace Jeans Couture</p>
-                            <p className="seckillPrice">￥339</p>
-                        </div>
-                        <div className="seckillList">
-                            <img src="https://pic2.zhen.com/uploadimg1/300_c3b52036c720c5c4953de4e27ff866c0.jpg" />
-                            <p className="seckillName">Versace Jeans Couture</p>
-                            <p className="seckillPrice">￥339</p>
-                        </div>
-                        <div className="seckillList">
-                            <img src="https://pic2.zhen.com/uploadimg1/300_c3b52036c720c5c4953de4e27ff866c0.jpg" />
-                            <p className="seckillName">Versace Jeans Couture</p>
-                            <p className="seckillPrice">￥339</p>
-                        </div>
-                        <div className="seckillList">
-                            <img src="https://pic2.zhen.com/uploadimg1/300_c3b52036c720c5c4953de4e27ff866c0.jpg" />
-                            <p className="seckillName">Versace Jeans Couture</p>
-                            <p className="seckillPrice">￥339</p>
-                        </div>
+                    <ReactIScroll iScroll = {iScroll} options = {{scrollX : true,scrollbars : false,mouseWheel : false,click:false }} > 
+                      <div className="ishot" style = {{width :'280%'}}>
+                      {
+                        this.state.list.map((item,index)=>{
+                          return(
+                             <Link key={"x" + index} to={'/detail' + item.brand_goods[2].goods_id}>
+                               <div  className="seckillList">
+                                
+                                    <img src={item.brand_goods[2].goods_img[0]} />
+                                    <p className="seckillName">{item.brand_goods[2].goods_title} </p>
+                                    <p className="seckillPrice">￥{item.brand_goods[2].goods_price} </p>
+                                  
+                              </div>
+                              </Link>
+                            )
+                        })
+                      }
+                       
+                      
                         </div>
                      </ReactIScroll >
 
@@ -289,14 +295,12 @@ class Test extends React.Component {
       renderRow = {
         row
       }
-      renderSeparator = {
-        separator
-      }
+
       initialListSize = {
-        5
+        3
       }
       pageSize = {
-        5
+        3
       }
       style = {
         {
@@ -322,7 +326,7 @@ class Test extends React.Component {
         this.onScroll
       }
       scrollRenderAheadDistance = {
-        200
+        100
       }
       scrollEventThrottle = {
         20

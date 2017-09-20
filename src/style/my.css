@@ -79,6 +79,7 @@
    display: flex;
     justify-content: center;
     align-items: center;
+    color: #fff;
 }
 
 
@@ -89,8 +90,9 @@
     height: 100%;
     padding: 0 .15rem;
     box-sizing: border-box;
+    background: #e5e5e5;
     color: #4c4c4c;
-    margin-bottom: 1.75rem;
+    /*margin-bottom: 1.75rem;*/
 }
 .orders,.fortune{
     width: 100%;

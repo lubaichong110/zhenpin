@@ -10,6 +10,11 @@ import {
 import {
   createForm
 } from 'rc-form';
+import {
+  Toast,
+  WingBlank,
+  Icon
+} from 'antd-mobile';
 import '../style/login.css'
 
 const tabs = [{
@@ -20,19 +25,93 @@ const tabs = [{
 
 class LoginUI extends React.Component {
   componentDidMount() {
-    // this.props.fetchListData();
+    // this.props.fetchRegist();
+
   }
   constructor() {
     super();
-
+    this.regist = this.regist.bind(this);
+    this.login = this.login.bind(this);
   }
+  regist() {
 
+    var username = this.refs.username.value;
+    var psw = this.refs.psw.value;
+    // console.log('./api/register?username=' + username + '&psw=' + psw)
+    fetch('./api/register?username=' + username + '&psw=' + psw).then((res) => {
+      return res.json()
+    }).then((data) => {
 
+      if (data == 1) {
+        console.log("成功");
+
+        function successToast() {
+          Toast.success('注册成功 !!!', 1);
+
+        }
+        successToast();
+        setTimeout(function() {
+          window.location.href = "/Login";
+
+        }, 1000)
+      }
+      if (data == 2) {
+        // console.log("该用户已被注册")
+        function failToast() {
+          Toast.fail('该用户已经注册 !!!', 1);
+        }
+        failToast();
+      }
+      if (data == 0) {
+        // console.log("失败")
+        function failToast() {
+          Toast.fail('注册失败 !!!', 1);
+        }
+        failToast();
+      }
+      this.refs.username.value = "";
+      this.refs.psw.value = "";
+    })
+  }
+  login() {
+    var loginName = this.refs.loginName.value;
+    var loginPsw = this.refs.loginPsw.value;
+    fetch("./api/login?username=" + loginName + "&psw=" + loginPsw).then((res) => {
+      return res.json();
+    }).then((data) => {
+      if (data == 1) {
+        // console.log("登录成功");
+        function successToast() {
+          Toast.success('登陆成功 !!!', 1);
+
+        }
+        successToast();
+        setTimeout(function() {
+          window.location.href = "/";
+        }, 1000)
+      }
+      if (data == 0) {
+        // console.log("用户名或密码错误")
+        function failToast() {
+          Toast.fail('用户名或密码错误 !!!', 1);
+        }
+        failToast();
+      }
+      this.refs.loginName.value = "";
+      this.refs.loginPsw.value = "";
+    })
+  }
+  back() {
+    window.location.href = "/my";
+  }
 
   render() {
 
     return (
       <div className="loginpage">
+          <div className="back" onClick={this.back}>
+            <i className="icon iconfont icon-ddqx"></i>
+          </div>
                 <div className="loginTab">
                     <Tabs tabs={tabs}
                       initialPage={0}
@@ -40,21 +119,12 @@ class LoginUI extends React.Component {
                       onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
                     >
                       <div className="childBox">
-                       <div>
-                       
-                            <InputItem className="userName"   
-                                clear
-                                placeholder="手机号/用户名/邮箱"
-                                autoFocus
-                              ></InputItem>
-                       
-                         <InputItem
-                            
-                            type="password"
-                            placeholder="密码"
-                          ></InputItem>
+                       <div className="login">
+                          <div><input className="userName" ref="loginName" type="text" placeholder="手机号/用户名/邮箱"/></div>
+                           <div><input className="psw" ref="loginPsw" type="password" placeholder="密码"/></div>
+                        
                            
-                           <Button className="btn"  activeStyle={false} type="primary">登录</Button>
+                           <Button className="btn" onClick={this.login} activeStyle={false} type="primary">登录</Button>
                          
                         <p className="forget">忘记密码？</p>
                        </div> 
@@ -79,12 +149,13 @@ class LoginUI extends React.Component {
                       </div>
                       <div className="childBox childBox2" >
                       <div className="regiser">
-                        <div> <input className="phone" type="text" placeholder="手机号"/><button className="getPwd">获取验证码</button></div> 
+                        <div> <input ref="username" className="phone" type="text" placeholder="手机号"/><button className="getPwd">获取验证码</button></div> 
                         <div><input type = "text" placeholder = "短信验证码" / ></div>
-                        <div><input type="password" placeholder="6-20位登录密码"/></div>
+                        <div><input ref="psw" type="password" placeholder="6-20位登录密码"/></div>
                         <br / >
-                        <div className="b"><button className="regiserBtn">注册</button> </div>
+                        <div className="b"><button onClick={this.regist} className="regiserBtn">注册</button> </div>
                         <p> 注册代表同意 <span > 注册协议 </span></p>
+                       
                       </div>
                       </div>
                     
@@ -97,21 +168,22 @@ class LoginUI extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-
+    Regist: state.Regist
   }
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    // fetchListData: () => {
-    //     fetch("/api/getdata").then((res) => {
-    //         return res.json();
-    //     }).then((json) => {
-    //         dispatch({
-    //             type: "GET_HOME_LIST",
-    //             payload: json
-    //         })
-    //     })
-    // }
+    fetchRegist: () => {
+      fetch("/api/getData").then((res) => {
+        return res.json();
+      }).then((json) => {
+        dispatch({
+          type: "GET_REGIST",
+          payload: json
+        })
+        console.log()
+      })
+    }
   }
 }
 const Login = connect(mapStateToProps, mapDispatchToProps)(LoginUI);

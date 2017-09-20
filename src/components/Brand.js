@@ -5,6 +5,7 @@ import {
 import {
     connect
 } from 'react-redux'
+import Header from "./Header.js"
 const data = Array.from(new Array(9)).map((_val, i) => ({
     icon: 'https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png',
     text: `name${i}`,
@@ -18,6 +19,7 @@ class BrandUI extends React.Component {
     render() {
         return (
             <div>
+                <Header></Header>  
                 <Grid data={data1}
                   columnNum={3}
                   renderItem={dataItem => (

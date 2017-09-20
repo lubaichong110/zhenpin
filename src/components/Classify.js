@@ -13,6 +13,8 @@ import {
 import {
     connect
 } from 'react-redux'
+import Header from "./Header.js"
+
 class ClassifyUI extends React.Component {
     componentDidMount() {
 
@@ -55,6 +57,7 @@ class ClassifyUI extends React.Component {
         ]
         return (
             <div className="classify_box">
+                <Header></Header>
                 <div className="classify_container">
                 <div className="class_left">
                 <IScroll iScroll={iscroll}>

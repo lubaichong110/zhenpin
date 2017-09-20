@@ -5,6 +5,7 @@ import {
 }
 
 from 'antd-mobile';
+import Header from "./Header.js"
 class Detail extends React.Component {
     constructor() {
         super();
@@ -25,6 +26,7 @@ class Detail extends React.Component {
     render() {
         return (
             <div id="detail">
+            <Header></Header>
                 <div className="good_scan">
                     <div className="good_scan_pic">
                        <Carousel
