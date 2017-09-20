@@ -1,59 +1,72 @@
 import React from 'react'
 import {
-    connect
-}
-from 'react-redux'
-import {
     InputItem
 }
 from 'antd-mobile';
 import {
+
     Link
 } from 'react-router-dom'
+
+connect
+}
+from 'react-redux'
+
 import "../styles/Header.css"
 
 
 class HeaderUI extends React.Component {
-    constructor() {
-        super();
-        this.back = this.back.bind(this);
-    }
-    componentDidMount() {
-        // this.props.fetchListData();
-        if (window.location.pathname == "/") {
-            this.refs.headerOther.style.display = "none"
-            this.refs.headerHome.style.display = "flex";
-            this.refs.header.style.marginTop = "23px"
-            this.refs.headerDetail.style.display = "none"
-
+        constructor() {
+            super();
+            this.back = this.back.bind(this);
         }
-        if (window.location.pathname !== "/") {
-            this.refs.headerOther.style.display = "flex"
-            this.refs.headerDetail.style.display = "none"
-            this.refs.headerHome.style.display = "none";
-        }
+        componentDidMount() {
+                // this.props.fetchListData();
 
-        if (window.location.pathname == "/my") {
-            this.refs.header.style.display = "none"
+                if (window.location.pathname == "/") {
+                    this.refs.headerOther.style.display = "none"
+                    this.refs.headerHome.style.display = "flex";
+                    this.refs.header.style.marginTop = "23px"
+                    this.refs.headerDetail.style.display = "none"
 
-        }
-        if (window.location.pathname == "/detail") {
-            this.refs.headerOther.style.display = "none"
-            this.refs.headerDetail.style.display = "flex"
-            this.refs.headerHome.style.display = "none";
+                }
+                if (window.location.pathname !== "/") {
+                    this.refs.headerOther.style.display = "flex"
+                    this.refs.headerDetail.style.display = "none"
+                    this.refs.headerHome.style.display = "none";
+                }
 
-        }
+                if (window.location.pathname == "/my") {
+                    this.refs.header.style.display = "none"
 
-    }
-    back() {
-        window.history.go(-1);
-    }
-    render() {
-        return (
+                }
+                if (window.location.pathname == "/detail") {
+                    this.refs.headerOther.style.display = "none"
+                    this.refs.headerDetail.style.display = "flex"
+                    this.refs.headerHome.style.display = "none";
 
-            <div className="header" ref="header" >
+
+                    if (window.location.pathname == "/my") {
+                        // this.refs.headerf.style.display = "none"
+                        this.refs.header.style.display = "block"
+
+                    }
+
+                }
+                back() {
+                    window.history.go(-1);
+                }
+                render() {
+                        return (
+
+
+                                <div className="header" ref="header" >
              <Link to={'/search'}>
                 <div className="headerHome" ref="headerHome" style={{display:"none"}}>
+
+            <div className="header" ref="header">
+                <div className="headerHome">
+
                    <span>珍品</span>
                    <div className="search">
                         <div>

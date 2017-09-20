@@ -152,7 +152,7 @@ class Test extends React.Component {
 
   getData() {
     // console.log("1")
-    fetch("/api/getIndex").then((res) => {
+    fetch("/api/getbranddata").then((res) => {
       return res.json();
 
     }).then((data) => {

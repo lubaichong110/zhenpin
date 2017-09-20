@@ -38,7 +38,7 @@ class LoginUI extends React.Component {
     var username = this.refs.username.value;
     var psw = this.refs.psw.value;
     // console.log('./api/register?username=' + username + '&psw=' + psw)
-    fetch('./api/register?username=' + username + '&psw=' + psw).then((res) => {
+    fetch('./api/regist?username=' + username + '&psw=' + psw).then((res) => {
       return res.json()
     }).then((data) => {
 

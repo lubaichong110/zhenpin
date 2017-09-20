@@ -35,12 +35,16 @@
     background-color: #f3f3f3;
 }
 .class_right{
+	background: #fff;
     float: right;
     width: 70%;
     height: 100%;
     margin-bottom: 1.8rem;
     padding: 0 0.2rem;
     box-sizing: border-box;
+}
+.am-activity-indicator-content{
+	margin-left: 3rem;
 }
 .kind_title{
     width: 100%;
