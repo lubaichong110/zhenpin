@@ -20,7 +20,6 @@ import Footer from "./components/Footer.js"
 import Setting from './components/Setting.js'
 
 
-
 //配置路由
 const App = () => (
   <Router>
@@ -35,13 +34,6 @@ const App = () => (
           <Route path="/detail" component={Detail}/>
           <Route path="/list" component={List}/>
           <Route path="/login" component={Login}/>
-      </div>
-      <div className="foot_bar">
-        <div><Link to="/"><i className="iconfont icon-home"></i>首页</Link></div>
-        <div><Link to="/discover"><i className="iconfont icon-fenlei1"></i>分类</Link></div>
-        <div><Link to="/zhenxuan"><i className="iconfont icon-zhinanzhen"></i>珍选</Link></div>
-        <div><Link to="/brand"><i className="iconfont icon-pinpai-"></i>品牌</Link></div>
-        <div><Link to="/my"><i className="iconfont icon-wode"></i>我的</Link></div>
       </div>
       <Footer></Footer>
     </div>

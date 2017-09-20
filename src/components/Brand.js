@@ -33,7 +33,7 @@ class BrandUI extends React.Component {
 }
 const mapStateToProps = (state) => {
     return {
-
+        
     }
 }
 const mapDispatchToProps = (dispatch) => {
