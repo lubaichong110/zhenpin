@@ -4,9 +4,8 @@ export default class Order extends React.Component {
     render() {
         return (
             <div>
-					珍选				
-		    </div>
-	        )
-	    }
-
+	 
+	        </div>
+        )
+    }
 }

@@ -160,6 +160,11 @@
 
 }
 .shopInfo2 .shopInfolist .shopName{
+    width: 1rem;
+    height: .4rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     color: #7f7f7f;
    font-size: .3rem;
 }

@@ -8,7 +8,7 @@
     left: 0;
     border-bottom: 1px solid #ddd;
 }
-.headerHome{
+.headerHome,.headerOther{
     width: 100%;
     height: 1.5rem;
     display: flex;
@@ -25,4 +25,35 @@
     justify-content: center;
     align-items: center;
     border-radius: 1rem;
+}
+.headerHome .search .icon,.headerOther .search .icon{
+    color: #999;
+    margin-right: .15rem;
+}
+.headerHome .search span，.headerOther .search span{
+    color: #b3b3b3;
+}
+.headerHome .icon-icongwd,.headerOther .icon-icongwd{
+    color: #c0c0c0;
+}
+.headerOther .search{
+    width: 90%;
+    height: .9rem;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+.headerDetail{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .3rem;
+    box-sizing: border-box;
+}
+.headerDetail .icon{
+    color: #c0c0c0;
 }

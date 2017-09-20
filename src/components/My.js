@@ -1,27 +1,33 @@
 import React from 'react'
+import {
+  Link
+} from 'react-router-dom'
 import '../style/my.css'
 import "../iconfont/iconfont.css"
 
 export default class My extends React.Component {
-    render() {
-        return (
-            <div className="my">
+  render() {
+    return (
+      <div className="my">
                 <div className="top">
                     <div className="set">
                          <div>
                         <i className="icon iconfont icon-shezhi"></i>
                         </div>
                     </div>
-                    <div className="user">
+                    <Link className="user" to={'login'}>
+                    
                         <div className="headImg">
                              <div>
                             <img src="unlogin.png" alt=""/>
                             </div>
                         </div>
                         <div className="login">
+
                             <p>登录/注册</p>
                         </div>
-                    </div>
+                    
+                    </Link>
                     <div className="email">
                     <div>
                         <i className="icon iconfont icon-youjian1"></i>
@@ -117,6 +123,6 @@ export default class My extends React.Component {
                     </div>
                 </div>
             </div>
-        )
-    }
+    )
+  }
 }
