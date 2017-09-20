@@ -2,10 +2,11 @@ import './App.css';
 import React from 'react'
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Link
 }
 from 'react-router-dom'
-  //引入组件
+//引入组件
 import Home from "./components/Home.js"
 import Classify from "./components/Classify.js"
 import Zhenxuan from "./components/Zhenxuan.js"
@@ -17,7 +18,6 @@ import List from "./components/List.js"
 import Login from "./components/Login.js"
 import Footer from "./components/Footer.js"
 import Setting from './components/Setting.js'
-import DetailPic from './components/DetailPic.js'
 
 
 //配置路由
@@ -34,8 +34,6 @@ const App = () => (
           <Route path="/detail/:id" component={Detail}/>
           <Route path="/list/:id" component={List}/>
           <Route path="/login" component={Login}/>
-          <Route path="/setting" component={Setting}/>
-          <Route path="/detailpic" component={DetailPic}/>
       </div>
       <Footer></Footer>
     </div>

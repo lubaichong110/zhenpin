@@ -1,17 +1,16 @@
 import React from 'react'
 import {
-    connect
-}
-from 'react-redux'
-import {
     InputItem
 }
 from 'antd-mobile';
+import {
+    connect
+} from 'react-redux'
 import "../styles/Header.css"
 class HeaderUI extends React.Component {
     componentDidMount() {
         // this.props.fetchListData();
-        if (window.location.pathname == "/detail") {
+        if (window.location.pathname == "/my") {
             // this.refs.headerf.style.display = "none"
             this.refs.header.style.display = "block"
         }
@@ -19,7 +18,7 @@ class HeaderUI extends React.Component {
     }
     render() {
         return (
-            <div className="header" >
+            <div className="header" ref="header">
                 <div className="headerHome">
                    <span>珍品</span>
                    <div className="search">
