@@ -16,6 +16,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "axios": "^0.16.2",
     "css-loader": "^0.28.7",
     "iscroll": "^5.2.0",
     "iscroll-react": "^1.0.3",
@@ -32,9 +33,9 @@
     "svg-sprite-loader": "^0.3.1"
   },
   "proxy": {
-	    "/api": {
-	      "target": "http://47.93.200.220:8080",
-	      "ws": true
-	    }
-	  }
+    "/api": {
+      "target": "http://47.95.232.220:8080",
+      "ws": true
+    }
+  }
 }

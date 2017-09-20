@@ -3,6 +3,7 @@ import "../styles/Classify.css"
 import IScroll from "iscroll-react"
 import iscroll from "iscroll"
 import axios from 'axios';
+import { ActivityIndicator, WingBlank, WhiteSpace, Button } from 'antd-mobile';
 import {
     setDefaultIScrollOptions
 } from "iscroll-react"
@@ -15,62 +16,76 @@ import {
     connect
 } from 'react-redux'
 class ClassifyUI extends React.Component {
+	constructor(){
+		super();
+		this.state={
+			color:"#f3f3f3",
+			menu_arr:[],
+			kind_arr:[],
+			animating: false
+		}
+		this.changeList=this.changeList.bind(this)
+	}
     componentDidMount() {
-			axios.get('/api/getbranddata')
+    	var that =this;
+    		//获取商品分类和信息
+			axios.get('/api/getsortdata')
 			  .then(function (res) {
-			    console.log(res);
+			    console.log(res.data[0].classify);
+			    var resArr=res.data[0].classify;//左边菜单
+			    for(var i in resArr){
+			    	that.state.menu_arr.push(resArr[i].class_name);
+			    	that.setState({
+			    		menu_arr:that.state.menu_arr
+			    	})
+			    }
+			    var kindArr=resArr[0].class_info;//右边分类
+			    console.log(kindArr)
+			    that.setState({
+			    		kind_arr:kindArr
+			    })
 			  })
 			  .catch(function (error) {
 			    console.log(error);
 			  });
     }
+    changeList(index){
+    	var liArr=document.getElementsByClassName("l_li")
+    	for(var i=0;i<liArr.length;i++){
+    		liArr[i].style.background="#f3f3f3"
+    	}
+    	liArr[index].style.background="#fff"
+    	var that =this;
+    	that.setState({
+		    		animating: !that.state.animating
+		    })
+    	
+    	axios.get('/api/getsortdata')
+		 .then(function (res) {
+		 	var kindArr=res.data[0].classify[index].class_info;//右边分类
+		 	console.log(that.setState)
+		    that.setState({
+		    		kind_arr:kindArr,
+		    		animating: !that.state.animating
+		    })
+		    //console.log(that.state.kind_arr)
+	 	 })
+		  .catch(function (error) {
+		    console.log(error);
+		  });
+	}
     render() {
-        var menu_arr = ["服装",
-            "箱包",
-            "鞋履",
-            "腕表",
-            "服饰内衣",
-            "首饰眼镜",
-            "生活家居",
-            "个护美妆",
-            "情趣用品",
-            "数码产品",
-            "运动户外"
-
-        ]
-        var kind_arr = [
-            "男装",
-            "女装",
-            "童装"
-        ]
-        var goods_arr = [
-            "长袖T恤",
-            "长袖衬衫",
-            "卫衣",
-            "针织衫",
-            "长袖polo衫",
-            "长袖T恤",
-            "长袖衬衫",
-            "卫衣",
-            "针织衫",
-            "长袖polo衫",
-            "长袖T恤",
-            "长袖衬衫",
-            "卫衣",
-            "针织衫",
-            "长袖polo衫"
-        ]
         return (
             <div className="classify_box">
                 <div className="classify_container">
                 <div className="class_left">
                 <IScroll iScroll={iscroll}>
                     <ul>
-                        {
-                            menu_arr.map((item,index)=>{
+                        {	
+                            this.state.menu_arr.map((item,index)=>{
                                 //console.log(item)
                                 return (
-                                    <li key={"m"+index}>{item}</li>
+                                    <li className="l_li" key={"m"+index} style={{background:this.state.color}} onClick={()=>this.changeList(index)}>{item}</li>
                                     )  
                             })
                         }
@@ -78,21 +93,21 @@ class ClassifyUI extends React.Component {
                 </IScroll>
                 </div>  
                 <div className="class_right">
+                	<ActivityIndicator toast animating={this.state.animating} size="large"/>
                     {
-
-                        kind_arr.map((item,index)=>{
+                        this.state.kind_arr.map((item,index)=>{
                             return(
                                     <div key={"k"+index}>
-                                        <div className="kind_title"><span>{item}</span></div>
+                                        <div className="kind_title"><span>{item.list_name}</span></div>
                                         <div className="goods">
                                             <ul>
                                                {
-                                                 goods_arr.map((g_item,index)=>{
+                                                 this.state.kind_arr[index].list_class.map((g_item,index)=>{
                                                     return(
-                                                        <li key={"g"+index}>
-                                                            <Link to="/list">
-                                                                <img src="https://pic2.zhen.com/uploadimg1/9d1e868743aaf9839449577b5dcecd74.jpg" />
-                                                                <div className="g_name">{g_item}</div>
+                                                        <li key={"g"+index} >
+                                                            <Link to={"/list/"+g_item.list_goods}>
+                                                                <img src={g_item.list_img} />
+                                                                <div className="g_name">{g_item.list_class_name}</div>
                                                             </Link>
                                                         </li>
                                                         )
@@ -116,7 +131,7 @@ setDefaultIScrollOptions({
     mouseWheel: false,
     shrinkScrollbars: "scale",
     fadeScrollbars: false,
-    click: true,
+    click: false
 })
 const mapStateToProps = (state) => {
     return {
