@@ -7,6 +7,7 @@ import {
 import {
     connect
 } from 'react-redux'
+import Header from './Header.js'
 import axios from 'axios';
 import "../styles/List.css"
 import { RefreshControl, ListView } from 'antd-mobile';
@@ -45,6 +46,7 @@ class ListUI extends React.Component {
     render() {
             return (
                 <div className="main_box" >
+                <Header></Header>
                 <div className="pxu_mb" style={{display:this.state.sort}}></div>
                 <div className="choose_box">
                     <div id="sort" onClick={this.alertP}>排序<i className="iconfont icon-xiangxia"></i></div>
