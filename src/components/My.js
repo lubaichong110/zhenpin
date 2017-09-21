@@ -6,6 +6,28 @@ import '../style/my.css'
 import "../iconfont/iconfont.css"
 
 export default class My extends React.Component {
+  constructor() {
+    super();
+    this.handle = this.handle.bind(this);
+    this.state = {
+      list: []
+    }
+  }
+  componentDidMount() {
+    if (localStorage.userName) {
+      this.refs.user.style.display = "none";
+      this.refs.loginuser.style.display = "flex";
+      this.setState({
+        list: localStorage.userName
+      })
+      console.log("1")
+    }
+  }
+
+  handle(e) {
+    e.preventDefault();
+  }
+
   render() {
     return (
       <div className="my">
@@ -22,9 +44,13 @@ export default class My extends React.Component {
                             <img src="unlogin.png" alt=""/>
                             </div>
                         </div>
-                        <div className="login">
+                        <div className="login" ref="user">
 
                             <p>登录/注册</p>
+                        </div>
+                        <div className="userName1" ref="loginuser" onClick={(e)=>this.handle(e)} style={{display:"none"}}>
+
+                                <p>{this.state.list}</p>
                         </div>
                     
                     </Link>

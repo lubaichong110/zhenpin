@@ -6,6 +6,7 @@ import {
   Flex,
   Stepper
 } from 'antd-mobile';
+import Header from './Header.js'
 const CheckboxItem = Checkbox.CheckboxItem;
 class Cart extends React.Component {
   constructor() {
@@ -23,6 +24,7 @@ class Cart extends React.Component {
   render() {
     return (
       <div id="cart">
+      <Header></Header>
                 <div className="cart_content">
                     <ul className="cart_content_ul">
                         <li className="cart_content_li">

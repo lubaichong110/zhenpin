@@ -206,3 +206,22 @@
     vertical-align: middle;
     margin-right: .2rem;
 }
+.userName1{
+     width: 2.5rem;
+    height: .8rem;
+    background: #87001b;
+    border-radius: 1rem;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 0 .3rem;
+    box-sizing: border-box;
+    }
+.userName1 p{
+    width: 1.2rem;
+    height: .5rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

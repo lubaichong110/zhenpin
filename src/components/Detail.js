@@ -1,62 +1,64 @@
 import React from 'react';
-import '../styles/Detail.css';
+import '../styles/detail.css';
 import {
-    Carousel,
-    Tabs
+  Carousel,
+  Tabs
 }
 from 'antd-mobile';
 import {
-    connect
+  connect
 } from 'react-redux'
+import Header from "./Header.js"
 const tabs = [{
-    title: "图文详情"
+  title: "图文详情"
 }, {
-    title: "参数规格"
+  title: "参数规格"
 }, ];
 
 class DetailUI extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            good_id: "1001",
-            good_id_arr: [],
-            good_info: []
-        }
+  constructor() {
+    super();
+    this.state = {
+      good_id: "1001",
+      good_id_arr: [],
+      good_info: []
     }
-    componentDidMount() {
-        var that = this;
-        fetch("/api/getgooddata").then((res) => {
-            return res.json()
-        }).then((data) => {
-            for (var i = 0; i < data.length; i++) {
-                that.state.good_id_arr.push(data[i].goods_id);
-            }
-            var good_index = this.state.good_id_arr.indexOf(this.state.good_id);
-            this.state.good_info.push(data[good_index])
-            that.setState({
-                good_id_arr: this.state.good_id_arr,
-                good_info: this.state.good_info
-            })
-            console.log(data)
-        })
+  }
+  componentDidMount() {
+    var that = this;
+    fetch("/api/getgooddata").then((res) => {
+      return res.json()
+    }).then((data) => {
+      for (var i = 0; i < data.length; i++) {
+        that.state.good_id_arr.push(data[i].goods_id);
+      }
+      var good_index = this.state.good_id_arr.indexOf(this.state.good_id);
+      this.state.good_info.push(data[good_index])
+      that.setState({
+        good_id_arr: this.state.good_id_arr,
+        good_info: this.state.good_info
+      })
+      console.log(data)
+    })
+  }
+  selectedSize(index, e) {
+    for (let i = 0; i < e.target.parentNode.children.length; i++) {
+      e.target.parentNode.children[i].className = "choose_size_span"
     }
-    selectedSize(index, e) {
-        for (let i = 0; i < e.target.parentNode.children.length; i++) {
-            e.target.parentNode.children[i].className = "choose_size_span"
-        }
 
-        e.target.className = "choose_size_span c_active"
+    e.target.className = "choose_size_span c_active"
+  }
+  selectedColor(index, e) {
+    for (let i = 0; i < e.target.parentNode.children.length; i++) {
+      e.target.parentNode.children[i].className = "choose_color_span"
     }
-    selectedColor(index, e) {
-        for (let i = 0; i < e.target.parentNode.children.length; i++) {
-            e.target.parentNode.children[i].className = "choose_color_span"
-        }
 
-        e.target.className = "choose_color_span c_active"
-    }
-    render() {
-        return (
-            <div>
+    e.target.className = "choose_color_span c_active"
+  }
+  render() {
+    return (
+      <div>
+        <Header></Header>  
             {
                 this.state.good_info.map((item, index) => {
                     return (
@@ -243,18 +245,18 @@ class DetailUI extends React.Component {
             }
 
             </div>
-        )
-    }
+    )
+  }
 }
 const mapStateToProps = (state) => {
-    return {
+  return {
 
-    }
+  }
 }
 const mapDispatchToProps = (dispatch) => {
-    return {
+  return {
 
-    }
+  }
 }
 const Detail = connect(mapStateToProps, mapDispatchToProps)(DetailUI);
 export default Detail
