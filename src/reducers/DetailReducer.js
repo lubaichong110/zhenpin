@@ -7,5 +7,6 @@ export default function(state = [], action) {
             return newState;
         default:
             return state
+            
     }
 }
