@@ -107,7 +107,7 @@ class DetailUI extends React.Component {
                             <div className="good_scan_pic">
                                <Carousel
                                   className="my-carousel"
-                                  autoplay={false}
+                                  autoplay={true}
                                   infinite
                                   selectedIndex={1}
                                   swipeSpeed={35}
