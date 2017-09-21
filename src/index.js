@@ -13,10 +13,14 @@ import {
     connect,
     Provider
 } from 'react-redux'
-import ReducerObj from "./reducers/index.js"
+import ReducerObj from "./reducers/index"
 
-//const reducers = combineReducers(ReducerObj)
-const store = createStore(ReducerObj, {});
+// const reducers = combineReducers(ReducerObj)
+
+const store = createStore(ReducerObj, {
+    detail_list: []
+});
+
 const renderPage = () => {
     ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 }

@@ -4,10 +4,10 @@
     flex-direction: column;
     align-items: center;
     background: #e5e5e5;
-    margin-top: 1.5rem;
     min-height:100%;
-    overflow: hidden;  
-    margin-bottom: 1.75rem
+    overflow: hidden; 
+    margin-top: 1.5rem;
+    margin-bottom: 1.75rem;
 }
 .app_container{
     width: 100%;
@@ -26,6 +26,8 @@
     border-bottom: 1px #666 solid;
     padding: 0.28rem 0 0.18rem 0;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
 }
 .ipt_checkbox{
     height: 100%;
@@ -93,12 +95,56 @@
     position: absolute;
     right: 0.1rem;
     bottom: -0.1rem;
-    width: 2.5rem;
+    width: 2.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
 }
-.am-stepper-handler, .am-stepper-handler-up-inner, .am-stepper-handler-down-inner{
-    width: 0.66rem !important;
-    height: 0.66rem !important;
+.count_stepper .plus , .count_stepper .discount{
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border: 1px #666 solid;
+    border-radius :0.12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.am-stepper-handler, .am-stepper-handler-up-inner, .am-stepper-handler-down-inner{
-    line-height: 0.66rem !important;
+.d_footer1{
+    width: 100%;
+    height:1.75rem;
+    z-index: 99999;
+    background: #f2f2f2;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #666
+}
+.d_footer1 .buyright{
+    width: 70%;
+    height:60%;
+    float: right;
+    margin-right: 0.1rem;
+    background: #d21034;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem
+}
+.remove{
+    position: absolute;
+    right: 0.1rem;
+    top: 0.8rem;
+    width: 1rem;
+    height: 0.6rem;
+    background: #ccc;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.13rem
 }
