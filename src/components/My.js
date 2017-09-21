@@ -33,9 +33,11 @@ export default class My extends React.Component {
       <div className="my">
                 <div className="top">
                     <div className="set">
+                      <Link to={'/setting'}>
                          <div>
                         <i className="icon iconfont icon-shezhi"></i>
                         </div>
+                      </Link>
                     </div>
                     <Link className="user" to={'login'}>
                     

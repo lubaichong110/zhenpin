@@ -30,6 +30,7 @@ class HeaderUI extends React.Component {
             this.refs.headerHome.style.display = "flex";
             this.refs.header.style.marginTop = "23px"
             this.refs.headerDetail.style.display = "none"
+            this.refs.HeaderSetting.style.display = "none"
             this.refs.HeaderCart.style.display = "none"
 
         }
@@ -37,6 +38,7 @@ class HeaderUI extends React.Component {
             this.refs.headerOther.style.display = "flex"
             this.refs.headerDetail.style.display = "none"
             this.refs.HeaderCart.style.display = "none"
+            this.refs.HeaderSetting.style.display = "none"
             this.refs.headerHome.style.display = "none";
         }
         if (window.location.pathname == "/cart") {
@@ -44,6 +46,7 @@ class HeaderUI extends React.Component {
             this.refs.headerHome.style.display = "none";
             this.refs.headerDetail.style.display = "none"
             this.refs.HeaderCart.style.display = "flex"
+            this.refs.HeaderSetting.style.display = "none"
 
         }
         if (window.location.pathname == "/my") {
@@ -55,8 +58,18 @@ class HeaderUI extends React.Component {
             this.refs.headerOther.style.display = "none"
             this.refs.headerDetail.style.display = "flex"
             this.refs.HeaderCart.style.display = "none"
+            this.refs.HeaderSetting.style.display = "none"
             this.refs.headerHome.style.display = "none";
         }
+        if (window.location.pathname == "/setting") {
+            this.refs.headerOther.style.display = "none"
+            this.refs.headerHome.style.display = "none";
+            this.refs.headerDetail.style.display = "none"
+            this.refs.HeaderCart.style.display = "none"
+            this.refs.HeaderSetting.style.display = "flex"
+
+        }
+
     }
     back() {
         window.history.go(-1);
@@ -105,6 +118,13 @@ class HeaderUI extends React.Component {
                     <i onClick={this.back} className="icon iconfont icon-fanhui1"></i>
                     <div className="title">
                         <p>购物袋</p>
+                    </div>
+                    <div></div>
+                </div>
+                 <div className="HeaderCart HeaderSetting" ref="HeaderSetting">
+                    <i onClick={this.back} className="icon iconfont icon-fanhui1"></i>
+                    <div className="title">
+                        <p>设置</p>
                     </div>
                     <div></div>
                 </div>

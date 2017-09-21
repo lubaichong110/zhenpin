@@ -9,6 +9,7 @@ import {
     createForm
 }
 from 'rc-form';
+import Header from './Header.js'
 const Item = List.Item;
 
 
@@ -27,7 +28,7 @@ class Setting extends React.Component {
     }
     userExit() {
         localStorage.removeItem("userName");
-        window.location.href("/my")
+        window.location.replace("/my")
     }
     render() {
         const {
@@ -35,6 +36,7 @@ class Setting extends React.Component {
         } = this.props.form;
         return (
             <div id="setting">
+            <Header></Header>
                 <div className="localCache">
                   <List className="my-list">
                     <Item
