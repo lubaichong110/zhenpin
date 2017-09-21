@@ -14,7 +14,7 @@ const reducers = combineReducers({
     Discover: DiscoverReducer,
     Order: OrderReducer,
     My: MyReducer,
-    Detail:DetailReducer,
+    detail_list: DetailReducer,
     Regist: RegistReducer
 })
 
