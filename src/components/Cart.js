@@ -33,17 +33,20 @@ class CartUI extends React.Component {
     var allcount = [];
     var totalp = 0;
     var totalc = 0;
+
     for (var i = 0; i < this.props.detail_list.length; i++) {
+
       onegoodprice.push(this.props.detail_list[i].info_price * this.props.detail_list[i].info_count)
       allcount.push(this.props.detail_list[i].info_count)
     }
     for (var i = 0; i < onegoodprice.length; i++) {
       totalp += onegoodprice[i]
     }
+    //console.log(allcount)
     for (var i = 0; i < allcount.length; i++) {
       totalc += parseInt(allcount[i])
     }
-    console.log(onegoodprice)
+    //console.log(totalc)
     this.setState({
       totalprice: totalp,
       totalcount: totalc
@@ -59,21 +62,20 @@ class CartUI extends React.Component {
 
     if (e.target.innerHTML == "+") {
       ++e.target.parentNode.children[1].innerHTML
-      this.calc();
     }
     if (e.target.innerHTML == "-") {
       if (e.target.parentNode.children[1].innerHTML < 2) {
         e.target.parentNode.children[1].innerHTML = 1
       } else {
         --e.target.parentNode.children[1].innerHTML;
-        this.calc();
       }
 
     }
     var count = e.target.parentNode.children[1].innerHTML;
     this.props.detail_list[index].info_count = count
-    console.log(this.props.detail_list)
-      // this.props.changeCount(count);
+    this.calc();
+    //console.log(this.props.detail_list)
+    // this.props.changeCount(count);
   }
   render() {
     return (
