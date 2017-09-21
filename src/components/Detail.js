@@ -12,8 +12,8 @@ import {
 import {
     Link
 }
-import Header from './Header.js'
 from 'react-router-dom'
+import Header from './Header.js'
 const tabs = [{
     title: "图文详情"
 }, {
@@ -26,8 +26,7 @@ class DetailUI extends React.Component {
         this.state = {
             good_id: "",
             good_id_arr: [],
-            good_info: [],
-            totalcount: 0
+            good_info: []
         }
         this.addCart = this.addCart.bind(this)
     }
@@ -129,7 +128,7 @@ class DetailUI extends React.Component {
                                 <div className="good_title">
                                     {item.goods_title}
                                 </div>
-                                <div className="good_price"><span className="rmb">￥</span>{item.goods_price}</div>
+                                <div className="good_price"><span className="rmb">¥</span>{item.goods_price}</div>
                             </div>    
                         </div>
                         <div className="good_choose">
@@ -169,7 +168,7 @@ class DetailUI extends React.Component {
                                 }
                                 </ul>
                             </div>
-<div className="good_send">
+                            <div className="good_send">
                                 <span className="send_title">配送</span>
                                 <ul className="send_ul">
                                     <li className="send_li">由珍品特约合作商发货</li>
@@ -197,7 +196,7 @@ class DetailUI extends React.Component {
                                 <div className="d_brand_pic">
                                     <img src={item.goods_brand} alt=""/>
                                 </div>
-                                <div className="brand_content_text">麦蔻 (McQ) 是亚历山大·麦昆 (Alexander McQueen) 的副线品牌，由创意总监莎拉?伯顿 (Sarah Burton) 掌舵，与主线品牌并驾齐驱，将当代个性设计与麦昆 (McQueen) 丰富的品牌历史完美结合，融合英国“街头风尚”和设计师诙谐睿智，男女成衣系列传递的精神是保持年轻的心和开放的态度。</div>
+                                <div className="brand_content_text">麦蔻 (McQ) 是亚历山大·麦昆 (Alexander McQueen) 的副线品牌，由创意总监莎拉•伯顿 (Sarah Burton) 掌舵，与主线品牌并驾齐驱，将当代个性设计与麦昆 (McQueen) 丰富的品牌历史完美结合，融合英国“街头风尚”和设计师诙谐睿智，男女成衣系列传递的精神是保持年轻的心和开放的态度。</div>
                             </div>
                         </div>
                         <div className="to_pic_detail">
