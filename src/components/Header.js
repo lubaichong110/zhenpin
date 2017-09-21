@@ -8,7 +8,7 @@ import {
     Link
 } from 'react-router-dom'
 import {
-connect
+    connect
 }
 from 'react-redux'
 
@@ -16,77 +16,97 @@ import "../styles/Header.css"
 
 
 class HeaderUI extends React.Component {
-        constructor() {
-            super();
-            this.back = this.back.bind(this);
+    constructor() {
+        super();
+        this.back = this.back.bind(this);
+    }
+    componentDidMount() {
+        // this.props.fetchListData();
+        if (window.location.pathname == "/search") {
+            this.refs.header.style.display = "none"
         }
-        componentDidMount() {
-                // this.props.fetchListData();
-				if (window.location.pathname == "/search") {
-		            this.refs.header.style.display = "none"
-		        }
-                if (window.location.pathname == "/") {
-                    this.refs.headerOther.style.display = "none"
-                    this.refs.headerHome.style.display = "flex";
-                    this.refs.header.style.marginTop = "23px"
-                    this.refs.headerDetail.style.display = "none"
+        if (window.location.pathname == "/") {
+            this.refs.headerOther.style.display = "none"
+            this.refs.headerHome.style.display = "flex";
+            this.refs.header.style.marginTop = "23px"
+            this.refs.headerDetail.style.display = "none"
+            this.refs.HeaderCart.style.display = "none"
 
-                }
-                if (window.location.pathname !== "/") {
-                    this.refs.headerOther.style.display = "flex"
-                    this.refs.headerDetail.style.display = "none"
-                    this.refs.headerHome.style.display = "none";
-                }
+        }
+        if (window.location.pathname !== "/") {
+            this.refs.headerOther.style.display = "flex"
+            this.refs.headerDetail.style.display = "none"
+            this.refs.HeaderCart.style.display = "none"
+            this.refs.headerHome.style.display = "none";
+        }
+        if (window.location.pathname == "/cart") {
+            this.refs.headerOther.style.display = "none"
+            this.refs.headerHome.style.display = "none";
+            this.refs.headerDetail.style.display = "none"
+            this.refs.HeaderCart.style.display = "flex"
 
-                if (window.location.pathname == "/my") {
-                    this.refs.header.style.display = "none"
+        }
+        if (window.location.pathname == "/my") {
+            this.refs.header.style.display = "none"
 
-                }
-                if (window.location.pathname == "/detail") {
-                    this.refs.headerOther.style.display = "none"
-                    this.refs.headerDetail.style.display = "flex"
-                    this.refs.headerHome.style.display = "none";
-
-
-                    if (window.location.pathname == "/my") {
-                        // this.refs.headerf.style.display = "none"
-                        this.refs.header.style.display = "block"
-                    }
-                }
-               } 
-                back(){
-                    window.history.go(-1);
-                }
-                render() {
-                        return (
-                                <div className="header" ref="header" >
-             <Link to={'/search'}>
+        }
+        var reg = /^\/detail\//;
+        if (window.location.pathname.match(reg)) {
+            this.refs.headerOther.style.display = "none"
+            this.refs.headerDetail.style.display = "flex"
+            this.refs.HeaderCart.style.display = "none"
+            this.refs.headerHome.style.display = "none";
+        }
+    }
+    back() {
+        window.history.go(-1);
+    }
+    render() {
+        return (
+            <div className="header" ref="header" >
+             
                 <div className="headerHome" ref="headerHome">
                    <span>珍品</span>
-                   <div className="search">
+                   <Link className="search" to={'/search'}>                
                         <div>
                             <i className="icon iconfont icon-sousuo"></i>
                              <span>腕表</span>
-                        </div>
-                   </div>
-                    <i className="icon iconfont icon-icongwd"></i>
-                </div>
-                </Link>
-                  <Link to={'/search'}>
-                <div className="headerOther" ref="headerOther">
-                    <div className="search">
-                        <div>
-                            <i className="icon iconfont icon-sousuo"></i>
-                             <span>腕表</span>
-                        </div>
-                   </div>
-                    <i className="icon iconfont icon-icongwd"></i>
-                </div>
+                        </div>                
                    </Link>
+                   <Link className="cartCountP" to={'/cart'}>
+                        <i className="icon iconfont icon-icongwd"></i>
+                        <span className="cartCount">0</span>
+                    </Link>
+                </div>
+                
+                  
+                <div className="headerOther" ref="headerOther">
+                <Link className="search" to={'/search'}>                  
+                        <div>
+                            <i className="icon iconfont icon-sousuo"></i>
+                             <span>腕表</span>
+                        </div>                  
+                   </Link>
+                  <Link className="cartCountP" to={'/cart'}>
+                        <i className="icon iconfont icon-icongwd"></i>
+                        <span className="cartCount">0</span>
+                    </Link>
+                </div>
+                   
                 <div className="headerDetail" ref="headerDetail" >
                    
                       <i onClick={this.back} className="icon iconfont icon-fanhui1"></i>
-                      <i className="icon iconfont icon-icongwd"></i>
+                      <Link className="cartCountP" to={'/cart'}>
+                        <i className="icon iconfont icon-icongwd"></i>
+                        <span className="cartCount">0</span>
+                    </Link>
+                </div>
+                <div className="HeaderCart" ref="HeaderCart">
+                    <i onClick={this.back} className="icon iconfont icon-fanhui1"></i>
+                    <div className="title">
+                        <p>购物袋</p>
+                    </div>
+                    <div></div>
                 </div>
             </div>
 

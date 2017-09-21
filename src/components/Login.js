@@ -33,10 +33,16 @@ class LoginUI extends React.Component {
     this.regist = this.regist.bind(this);
     this.login = this.login.bind(this);
   }
+
   regist() {
 
     var username = this.refs.username.value;
     var psw = this.refs.psw.value;
+    // var reg = /^1[3|4|5|8][0-9]\d{4,8}$/;
+    if (!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(username))) {
+      Toast.fail('请输入正确的手机号 !!!', 1);
+      return false;
+    }
     // console.log('./api/register?username=' + username + '&psw=' + psw)
     fetch('./api/regist?username=' + username + '&psw=' + psw).then((res) => {
       return res.json()
@@ -44,12 +50,8 @@ class LoginUI extends React.Component {
 
       if (data == 1) {
         console.log("成功");
+        Toast.success('注册成功 !!!', 1);
 
-        function successToast() {
-          Toast.success('注册成功 !!!', 1);
-
-        }
-        successToast();
         setTimeout(function() {
           window.location.href = "/Login";
 
@@ -57,17 +59,11 @@ class LoginUI extends React.Component {
       }
       if (data == 2) {
         // console.log("该用户已被注册")
-        function failToast() {
-          Toast.fail('该用户已经注册 !!!', 1);
-        }
-        failToast();
+        Toast.fail('该用户已经注册 !!!', 1);
       }
       if (data == 0) {
-        // console.log("失败")
-        function failToast() {
-          Toast.fail('注册失败 !!!', 1);
-        }
-        failToast();
+        // console.log("失败")      
+        Toast.fail('注册失败 !!!', 1);
       }
       this.refs.username.value = "";
       this.refs.psw.value = "";
@@ -81,21 +77,16 @@ class LoginUI extends React.Component {
     }).then((data) => {
       if (data == 1) {
         // console.log("登录成功");
-        function successToast() {
-          Toast.success('登陆成功 !!!', 1);
 
-        }
-        successToast();
+        Toast.success('登陆成功 !!!', 1);
+        localStorage.setItem("userName", loginName)
         setTimeout(function() {
           window.location.href = "/";
         }, 1000)
       }
       if (data == 0) {
         // console.log("用户名或密码错误")
-        function failToast() {
-          Toast.fail('用户名或密码错误 !!!', 1);
-        }
-        failToast();
+        Toast.fail('用户名或密码错误 !!!', 1);
       }
       this.refs.loginName.value = "";
       this.refs.loginPsw.value = "";

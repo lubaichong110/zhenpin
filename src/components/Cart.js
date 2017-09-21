@@ -5,6 +5,7 @@ import {
   Checkbox,
   Flex
 } from 'antd-mobile';
+import Header from './Header.js'
 import {
   connect
 } from 'react-redux'
@@ -82,6 +83,7 @@ class CartUI extends React.Component {
   render() {
     return (
       <div id="cart">
+      <Header></Header>
                 <div className="cart_content">
                     <ul className="cart_content_ul" ref="cart_content_ul">
                     { 
