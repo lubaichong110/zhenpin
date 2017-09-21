@@ -1,8 +1,8 @@
 export default function(state = [], action) {
     switch (action.type) {
-        case "PLUS_COUNT":
+        case "ALL_COUNT":
             var newState = [...state];
-            console.log(newState)
+            newState.push(action.payload);
             return newState;
         default:
             return state

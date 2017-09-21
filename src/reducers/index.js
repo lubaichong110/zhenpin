@@ -15,7 +15,7 @@ const reducers = combineReducers({
     Order: OrderReducer,
     My: MyReducer,
     detail_list: DetailReducer,
-    Regist: RegistReducer
+    Regist: RegistReducer,
 })
 
 export default reducers;

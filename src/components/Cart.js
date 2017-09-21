@@ -16,7 +16,7 @@ class CartUI extends React.Component {
       good_count: 1,
       cart_count: [],
       totalprice: 0,
-      totalcount: 0
+      totalcount: 1
     };
   }
   componentDidMount() {
@@ -26,7 +26,8 @@ class CartUI extends React.Component {
     this.setState({
       cart_count: this.state.cart_count,
     })
-    this.calc()
+    this.calc();
+
   }
   calc() {
     var onegoodprice = [];
@@ -46,6 +47,7 @@ class CartUI extends React.Component {
     for (var i = 0; i < allcount.length; i++) {
       totalc += parseInt(allcount[i])
     }
+
     //console.log(totalc)
     this.setState({
       totalprice: totalp,
@@ -132,9 +134,7 @@ const mapStateToProps = (state) => {
 
 }
 const mapDispatchToProps = (dispatch) => {
-  return {
-
-  }
+  return {}
 }
 const Cart = connect(mapStateToProps, mapDispatchToProps)(CartUI);
 export default Cart;

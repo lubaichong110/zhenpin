@@ -41,3 +41,15 @@
     width: 100%;
     height: 100%
 }
+.user_exit{
+    width: 95%;
+    height: 1.3rem;
+    background: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.6rem;
+    border-radius: 0.2rem;
+    color:#666;
+    margin-top: 1rem
+}

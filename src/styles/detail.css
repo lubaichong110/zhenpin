@@ -307,6 +307,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+.foot_cart .icon_count{
+    display: block;
+    width: 0.5rem;
+    height:0.5rem;
+    position: absolute;
+    background: red;
+    right: 0.2rem;
+    top: 0.2rem;
+    border-radius:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
 }
 .foot_cart a{
     width: 100%;

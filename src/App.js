@@ -37,6 +37,7 @@ const App = () => (
           <Route path="/login" component={Login}/>
           <Route path="/cart" component={Cart}/>
           <Route path="/search" component={Search}/>
+          <Route path="/setting" component={Setting}/>
       </div>
       <Footer></Footer>
     </div>

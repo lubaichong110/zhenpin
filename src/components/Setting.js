@@ -10,10 +10,24 @@ import {
 }
 from 'rc-form';
 const Item = List.Item;
+
+
 class Setting extends React.Component {
     state = {
         disabled: false,
         value: 1
+    }
+    componentDidMount() {
+        var isLogin = localStorage.getItem("userName");
+        if (isLogin) {
+            this.refs.user_exit.style.display = "block"
+        } else {
+            this.refs.user_exit.style.display = "none";
+        }
+    }
+    userExit() {
+        localStorage.removeItem("userName");
+        window.location.href("/my")
     }
     render() {
         const {
@@ -35,6 +49,9 @@ class Setting extends React.Component {
                     <Item arrow="horizontal" onClick={() => {}}>推荐珍品给好友</Item>
                     <Item extra="v3.9.2" arrow="horizontal" onClick={() => {}}>关于珍品</Item>
                   </List>
+                </div>
+                <div ref="user_exit" className="user_exit" onClick={this.userExit}>
+                    退出登录
                 </div>
             </div>
 

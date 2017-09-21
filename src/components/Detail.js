@@ -25,7 +25,8 @@ class DetailUI extends React.Component {
         this.state = {
             good_id: "",
             good_id_arr: [],
-            good_info: []
+            good_info: [],
+            totalcount: 0
         }
         this.addCart = this.addCart.bind(this)
     }
@@ -77,6 +78,7 @@ class DetailUI extends React.Component {
         var isIndex = lsId.indexOf(this.state.good_info[0].goods_id);
         var isColor = lscolor.indexOf(this.state.good_info[0].goods_color[this.selectColor]);
         var isSize = lssize.indexOf(this.state.good_info[0].goods_size[this.selectSize]);
+
         if (isIndex != -1 && isColor != -1 && isSize != -1) {
             this.props.detail_list[isIndex].info_count++
         } else {
@@ -92,7 +94,6 @@ class DetailUI extends React.Component {
             this.props.intoCart(infoToCart);
         }
         Toast.success('已添加到购物袋', 1);
-        console.log(infoToCart);
     }
     render() {
         return (
@@ -262,12 +263,12 @@ class DetailUI extends React.Component {
                                     <span>收藏</span>
                                 </div>
                            </div> 
-                           <div className='d_cart'>
-                                    
+                           <div className='d_cart'>  
                                 <div className="foot_cart">
                                     <Link to="/cart"> 
                                         <i className="iconfont icon-gouwudai"></i>
                                         <span>购物袋</span>
+                                        <em className="icon_count" style={{display:"none"}}></em>
                                     </Link>
                                 </div>
 
@@ -291,8 +292,9 @@ class DetailUI extends React.Component {
     }
 }
 const mapStateToProps = (state) => {
+    console.log(state)
     return {
-        detail_list: state.detail_list
+        detail_list: state.detail_list,
     }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -305,6 +307,5 @@ const mapDispatchToProps = (dispatch) => {
         }
     }
 }
-
 const Detail = connect(mapStateToProps, mapDispatchToProps)(DetailUI);
 export default Detail

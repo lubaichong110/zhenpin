@@ -15,10 +15,8 @@ import {
 } from 'react-redux'
 import ReducerObj from "./reducers/index"
 
-// const reducers = combineReducers(ReducerObj)
-
 const store = createStore(ReducerObj, {
-    detail_list: []
+    detail_list: [],
 });
 
 const renderPage = () => {
